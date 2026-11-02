@@ -1,0 +1,55 @@
+# Production: API and Postgres only. Workers run elsewhere (e.g. a home PC)
+# and reach the API over HTTPS. A reverse proxy in front terminates TLS and
+# forwards to 127.0.0.1:${CSDC_PORT}.
+#
+# Needs a .env next to this file with POSTGRES_PASSWORD, CSDC_WORKER_TOKEN,
+# CSDC_PORT, CSDC_PUBLIC_URL and CSDC_ADMIN_STEAM_IDS. Run from the repository root:
+#
+#   docker compose -f deploy/compose.prod.yaml --env-file deploy/.env up -d --build
+name: csdc
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: csdc
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+      POSTGRES_DB: csdc
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U csdc"]
+      interval: 5s
+      retries: 30
+    # Postgres is reachable only from the api container.
+
+  api:
+    build:
+      context: ..
+      target: api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://csdc:${POSTGRES_PASSWORD:?}@db:5432/csdc
+      CSDC_DEMO_DIR: /demos
+      CSDC_WORKER_TOKEN: ${CSDC_WORKER_TOKEN:?}
+      # Steam sign-in; see cmd/api for details.
+      CSDC_PUBLIC_URL: ${CSDC_PUBLIC_URL:?}
+      CSDC_ADMIN_STEAM_IDS: ${CSDC_ADMIN_STEAM_IDS:-}
+      CSDC_QUOTA_UPLOADS: ${CSDC_QUOTA_UPLOADS:-15}
+      CSDC_QUOTA_COACHING: ${CSDC_QUOTA_COACHING:-15}
+      CSDC_BRIEF_HOUR: ${CSDC_BRIEF_HOUR:-15}
+      CSDC_STEAM_API_KEY: ${CSDC_STEAM_API_KEY:-}
+      CSDC_TELEGRAM_TOKEN: ${CSDC_TELEGRAM_TOKEN:-}
+      CSDC_TZ: ${CSDC_TZ:-UTC}
+    ports:
+      - "127.0.0.1:${CSDC_PORT:-8090}:8080"
+    volumes:
+      - demos:/demos
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db:
+  demos:

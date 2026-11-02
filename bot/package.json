@@ -1,0 +1,16 @@
+{
+  "name": "csdc-bot",
+  "private": true,
+  "description": "Resolves CS2 share codes to demo URLs through the Game Coordinator for CS Demo Coach (ADR 12).",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "globaloffensive": "3.3.0",
+    "steam-user": "5.3.0"
+  }
+}

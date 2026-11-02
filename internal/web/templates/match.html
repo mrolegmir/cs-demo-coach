@@ -1,0 +1,468 @@
+{{define "head"}}
+<style>
+:root {--review:#806000;--review-bg:#fff3bd}
+@media(prefers-color-scheme:dark) {:root {--review:#f2d15b;--review-bg:#332d15}}
+.priority-badge {display:inline-block;background:var(--chip);color:var(--bad);border:1px solid var(--bad);border-radius:5px;padding:1px 6px;font-size:12px;font-weight:650;line-height:1.5;margin:3px 0}
+.check-state {display:block;font-size:12px;font-weight:400;margin-top:4px;color:var(--muted)}
+.skill-check.attention .check-state {color:var(--review)}
+.skill-check.clear .check-state {color:var(--good)}
+.status-key {display:inline-block;padding:2px 7px;border-radius:5px;margin:2px 4px 2px 0}
+.status-key.review {background:var(--review-bg);color:var(--review)}
+.status-key.clear {color:var(--good);background:var(--chip)}
+.status-key.unknown {background:var(--chip)}
+.place-guide {font-size:14px;margin-bottom:16px}
+
+.skill-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.skill-category {min-width:0;overflow-wrap:anywhere;margin:0;align-self:start;border-top:3px solid var(--muted)}
+.skill-category.attention {border-top-color:var(--review)}
+.skill-category.clear {border-top-color:var(--good)}
+.skill-category summary {list-style:none;display:flex;gap:12px;align-items:center}
+.skill-category summary::-webkit-details-marker {display:none}
+.skill-category summary:after {content:'+';margin-left:auto;font-size:24px;color:var(--muted)}
+.skill-category[open]>summary:after {content:'−'}
+.skill-icon {font-size:27px;min-width:32px;color:var(--muted)}
+.attention .skill-icon {color:var(--review)}
+.clear .skill-icon {color:var(--good)}
+.skill-status {display:block;font-size:13px;font-weight:400;color:var(--muted)}
+.skill-check {border-top:1px solid var(--line);padding:14px 0}
+.skill-check>summary {font-size:14px;display:block}
+.skill-check>summary:after {display:none}
+.skill-check .count {float:right;font-variant-numeric:tabular-nums;margin-left:8px}
+.skill-check.attention>summary {color:var(--review)}
+.skill-check.clear>summary {color:var(--good)}
+.skill-check p {font-size:14px}
+.utility-totals {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:8px 0 18px}
+.utility-totals dt {font-size:14px;color:var(--muted)}
+.utility-totals dd {margin:0;font-size:20px;font-variant-numeric:tabular-nums}
+.utility-events {min-width:620px;overflow-wrap:normal}
+.utility-events th,.utility-events td {white-space:nowrap}
+.flash-blinds {overflow-wrap:normal}
+.flash-blinds td {white-space:nowrap}
+.aim-samples {overflow-wrap:normal;font-size:13px}
+.aim-samples th,.aim-samples td {padding:6px 4px}
+.skill-category>p {font-size:13px}
+.skill-legend {font-size:13px;margin:8px 0 20px}
+.round.switch {margin-left:14px;border-left:3px solid var(--accent)}
+.team-heading th {padding-top:20px;color:var(--ink);font-size:16px}
+.quick-plan {border-left:4px solid var(--accent)}
+@media(max-width:640px) {.skill-grid {grid-template-columns:minmax(0,1fr)}}
+</style>
+{{end}}
+{{define "title"}}{{with .Match}}{{if .Map}}{{.Map}}{{else}}{{tr "Match"}}{{end}}{{end}} · CS Demo Coach{{end}}
+
+{{define "evidence"}}
+<ul class="evidence">
+  {{range .}}<li><a class="chip" href="#{{.ID}}">{{tr "R"}}{{.Round}}{{if .Side}} · {{.Side}}{{end}}{{if .Time}} {{clock .Time}}{{end}}</a> {{if .Place}}<span class="muted">{{.Place}}:</span> {{end}}{{.Detail}}</li>{{end}}
+</ul>
+{{end}}
+
+{{define "content"}}
+{{with .Match}}
+<h1>{{if .Map}}{{.Map}}{{else}}{{tr "Match"}}{{end}}</h1>
+<p class="muted">{{.UploadedAt.Format "02.01.2006 15:04"}} · <span class="status {{.Status}}">{{tr .Status}}</span></p>
+{{end}}
+{{if .Result.Known}}
+<p class="match-score"><span class="result {{.Result.Outcome}}" aria-label="{{tr .Result.Outcome}}">{{.Result.Symbol}}</span> {{.Result.Won}} : {{.Result.Lost}} <small>{{tr .Result.Outcome}}</small></p>
+<p class="muted">{{tr "Rounds won"}}: T {{.Result.TWon}} · CT {{.Result.CTWon}}</p>
+{{end}}
+
+{{range .Scoreboard}}{{if .Self}}
+<p><strong>K / D / A</strong> {{.Kills}} / {{.Deaths}} / {{.Assists}} · {{tr "Headshots"}} {{.Headshots}}</p>
+{{end}}{{end}}
+
+{{if .Notice}}<div class="panel{{if ne .Notice "Practice completed and added to your log."}} error{{end}}" role="status">{{tr .Notice}}</div>{{end}}
+{{if and (eq .Match.Status "detected") .Match.Error}}<div class="panel error">{{tr "Coaching failed:"}} {{.Match.Error}} {{tr "You can try again below."}}</div>{{end}}
+
+{{if eq .Match.Status "uploaded"}}
+<div class="panel" role="status">{{tr "Analyzing the match…"}}</div>
+{{else if eq .Match.Status "failed"}}
+<div class="panel error">{{tr "Analysis failed:"}} {{.Match.Error}}</div>
+{{else if eq .Match.Status "coaching"}}
+<div class="panel" role="status">{{tr "Preparing recommendations…"}}</div>
+{{end}}
+{{if .Pending}}
+<p class="muted">{{tr "Recommendations will appear here when ready."}} <a href="/matches/{{.Match.ID}}">{{tr "Check now"}}</a></p>
+<script>
+(() => {
+  const initial = {{.Match.Status}};
+  async function check() {
+    try {
+      const response = await fetch(location.pathname + '/status', {cache: 'no-store', headers: {'Accept': 'application/json'}});
+      if (response.ok && (await response.json()).status !== initial) { location.reload(); return; }
+    } catch (_) {}
+    setTimeout(check, 3000);
+  }
+  setTimeout(check, 3000);
+})();
+</script>
+{{end}}
+
+{{if .Categories}}
+<h2>{{tr "Your game"}}</h2>
+<div class="muted skill-legend">
+<span class="status-key review">● {{tr "Review episodes"}}</span>
+<span class="status-key clear">● {{tr "No recorded episodes"}}</span>
+<span class="status-key unknown">● {{tr "No assessment"}}</span>
+<span class="priority-badge">{{tr "Coach priority"}}</span>
+<div>{{tr "Colors describe the checks; a priority badge shows where to start, not how severe a mistake was."}}</div>
+</div>
+<details class="place-guide"><summary>{{tr "Where are these positions?"}}</summary>
+<p>{{tr "Position names come from the map's area labels recorded in the demo. Your team's callouts may differ."}}</p>
+<p><a href="{{.CalloutURL}}" target="_blank" rel="noopener noreferrer">{{tr "Map and position names — Total CS"}} ↗</a></p>
+<p class="muted">{{tr "This community guide is a visual reference; its names and map version may differ from your demo."}}</p>
+<a href="https://github.com/markus-wa/demoinfocs-golang/blob/v5.2.0/pkg/demoinfocs/common/player.go#L638" target="_blank" rel="noopener noreferrer">{{tr "Technical source of the demo labels"}} ↗</a>
+</details>
+<div class="skill-grid">
+{{range .Categories}}
+<details class="panel skill-category {{.State}}">
+<summary><span class="skill-icon" aria-hidden="true">{{.Icon}}</span><span>{{tr .Title}}{{if .Priority}}<br><span class="priority-badge">{{tr "Coach priority"}} {{.Priority}}</span>{{end}}<span class="skill-status">{{tr .Status}}{{if .Count}} · {{.Count}}{{end}}</span></span></summary>
+{{if .Utility}}
+<details class="skill-check">
+<summary>{{tr "HE and fire damage"}}</summary>
+{{if .Utility.Captured}}
+<p>{{tr "Recorded health damage from your grenades. Fire combines Molotov and incendiary damage. Totals exclude unknown damage amounts and unknown teams; these events are listed separately."}}</p>
+{{if not .Utility.DamageAvailable}}<p>{{tr "No measured HE or fire damage is available in this demo. Damage totals are unavailable; throw counts remain available."}}</p>{{end}}
+{{$damageAvailable := .Utility.DamageAvailable}}{{range .Utility.Summary}}
+<h3>{{tr .Family}}</h3>
+<dl class="utility-totals">
+<div><dt>{{tr "Throws"}}</dt><dd>{{.Throws}}</dd></div>
+<div><dt>{{tr "Enemy HP"}}</dt><dd>{{if $damageAvailable}}{{.EnemyDamage}}{{else}}—{{end}}</dd></div>
+<div><dt>{{tr "Teammate HP"}}</dt><dd>{{if $damageAvailable}}{{.TeamDamage}}{{else}}—{{end}}</dd></div>
+<div><dt>{{tr "Self HP"}}</dt><dd>{{if $damageAvailable}}{{.SelfDamage}}{{else}}—{{end}}</dd></div>
+</dl>
+{{if .MissingDamageEvents}}<p>{{tr "Unknown damage events"}}: {{.MissingDamageEvents}}</p>{{end}}
+{{if .UnclassifiedEvents}}<p>{{tr "Unknown team events"}}: {{.UnclassifiedEvents}}</p>{{end}}
+{{end}}
+<p class="muted">{{tr "Damage is not matched to individual throws. Zero recorded damage does not mean a grenade was useless: fire can deny space without hitting anyone. Missing events and armor damage are not included. These totals do not change coaching priorities."}}</p>
+{{if .Utility.Evidence}}
+<details><summary>{{tr "Grenade damage events"}} ({{len .Utility.Evidence}})</summary>
+<p class="muted">{{tr "The position is the damaged player's area, not the throw position. Repeated fire ticks are damage events, not separate grenades or enemies."}}</p>
+<div class="scroll"><table class="utility-events">
+<tr><th>{{tr "Round / time"}}</th><th>{{tr "Side"}}</th><th>{{tr "Grenade"}}</th><th>{{tr "Damaged player"}}</th><th>{{tr "Relation"}}</th><th>{{tr "Health damage"}}</th><th>{{tr "Where"}}</th></tr>
+{{range .Utility.Evidence}}<tr><td>{{tr "R"}}{{.Round}} {{clock .Time}}</td><td>{{.Side}}</td><td>{{tr .Family}}</td><td>{{.Victim}}</td><td>{{tr .Relation}}</td><td>{{if .Known}}{{.Damage}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .Place}}{{.Place}}{{else}}{{tr "not recorded"}}{{end}}</td></tr>{{end}}
+</table></div></details>
+{{else}}<p>{{tr "No HE or fire damage events were recorded for you."}}</p>{{end}}
+{{else}}<p>{{tr "HE and fire damage was not captured in this analysis. A newly parsed demo is required."}}</p>{{end}}
+</details>
+{{end}}
+{{if .Decisions}}
+<details class="skill-check">
+<summary>{{tr "Lost rounds after a numerical advantage"}} ({{len .Decisions.Advantages}})</summary>
+<p>{{tr "Each listed round was lost after a death snapshot showed you alive and your team with more living players than the opposing team. One largest recorded advantage is shown per round. This is a starting point for replay review, not proof of a bad decision."}}</p>
+{{range .Decisions.Advantages}}
+<details class="drill"><summary>{{tr "R"}}{{.Round}} · {{.Side}} · {{if .TimeKnown}}{{clock .Time}}{{else}}{{tr "not recorded"}}{{end}} · {{.OwnAlive}} {{tr "vs"}} {{.EnemyAlive}}</summary>
+<p><strong>{{tr "Your alive team"}}</strong><br>{{range $i,$name := .Own}}{{if $i}}, {{end}}{{$name}}{{end}}</p>
+<p><strong>{{tr "Alive opponents"}}</strong><br>{{range $i,$name := .Enemy}}{{if $i}}, {{end}}{{$name}}{{end}}</p>
+{{if .Deaths}}
+<p>{{tr "Recorded deaths after this moment. Events sharing a tick have no guaranteed order."}}</p>
+<div class="scroll"><table class="utility-events">
+<tr><th>{{tr "Time"}}</th><th>{{tr "Victim"}}</th><th>{{tr "Killer"}}</th><th>{{tr "Victim area"}}</th></tr>
+{{range .Deaths}}<tr><td>{{if .TimeKnown}}{{clock .Time}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{.Victim}}</td><td>{{if .KillerKnown}}{{.Killer}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .Place}}{{.Place}}{{else}}{{tr "not recorded"}}{{end}}</td></tr>{{end}}
+</table></div>
+{{end}}
+</details>
+{{else}}<p>{{tr "No eligible lost-advantage snapshots were recorded. This does not assess all decisions."}}</p>{{end}}
+<p class="muted">{{tr "Review what happened next: did the team stay close enough to trade, which angles were checked, and how did the bomb objective affect the plan? Information and communication are not reconstructed."}}</p>
+</details>
+<details class="skill-check">
+<summary>{{tr "Bomb and post-plant timeline"}}</summary>
+{{if .Decisions.ObjectiveCaptured}}
+<p>{{tr "Recorded plant and defuse actions, player counts at plant and the round outcome. Elapsed time after planting is not a bomb countdown; no default bomb timer or defuse deadline is assumed."}}</p>
+<p class="muted">{{tr "Deaths after the plant are included. Events sharing a tick have no guaranteed order."}}</p>
+{{range .Decisions.Rounds}}
+<details class="drill"><summary>{{tr "R"}}{{.Round}} · {{.Side}}{{if .Site}} · {{.Site}}{{end}} · {{tr .Result}}</summary>
+{{if .PlantKnown}}<p>{{tr "Alive at plant:"}} T {{.TAlive}} · CT {{.CTAlive}}<br>{{tr "You in the alive snapshot:"}} {{if .ViewerAlive}}{{tr "Yes"}}{{else}}{{tr "No"}}{{end}}</p>{{else}}<p class="muted">{{tr "Player counts at plant are unavailable."}}</p>{{end}}
+<div class="scroll"><table class="utility-events">
+<tr><th>{{tr "Time"}}</th><th>{{tr "Since plant"}}</th><th>{{tr "Action"}}</th><th>{{tr "Player"}}</th><th>{{tr "Bombsite"}}</th><th>{{tr "Defuse kit"}}</th></tr>
+{{range .Events}}<tr><td>{{if .TimeKnown}}{{clock .Time}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .AfterPlant}}+{{clock .SincePlant}}{{else}}—{{end}}</td><td>{{tr .Action}}</td><td>{{if .NoActor}}—{{else if .ActorKnown}}{{.Player}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .Site}}{{.Site}}{{else}}—{{end}}</td><td>{{if .KitKnown}}{{if .HasKit}}{{tr "Yes"}}{{else}}{{tr "No"}}{{end}}{{else if .KitRelevant}}{{tr "not recorded"}}{{else}}—{{end}}</td></tr>{{end}}
+</table></div>
+</details>
+{{else}}<p>{{tr "No bomb actions were recorded in your rounds."}}</p>{{end}}
+{{else}}<p>{{tr "Bomb actions were not captured in this analysis. A new parse is required for the timeline; the advantage review above can use existing death snapshots."}}</p>{{end}}
+</details>
+{{end}}
+{{if .Shooting}}
+<p>{{tr "Rifle sequences and recorded damage provide replay context. No linked damage is not a miss. View direction is sampled before damage to the identified player; that player is not assumed to have been your intended or visible target."}}</p>
+{{if not .Shooting.Captured}}<p>{{tr "A new parse is required for shooting observations."}}</p>{{end}}
+{{if not .Shooting.TrajectoryCaptured}}<p class="muted">{{tr "View-to-player trajectories were not captured here. A new parse is required for those samples."}}</p>{{end}}
+{{range .Shooting.Episodes}}
+<details class="drill"><summary>{{tr "R"}}{{.Round}} · {{.Side}} · {{clock .Time}} · {{.Weapon}} · {{tr "Shots"}}: {{.Shots}}</summary>
+{{if .Place}}<p>{{.Place}}</p>{{end}}
+{{if .TargetKnown}}<p>{{tr "First linked damage:"}} {{.Target}} · {{tr "First damage at shot"}} {{.FirstHit}} · {{tr "Distance (game units)"}}: {{printf "%.0f" .Distance}}</p>{{else if .Ambiguous}}<p>{{tr "The first damaging shot has multiple damage events. No target trajectory was selected."}}</p>{{else}}<p>{{tr "No uniquely linked enemy damage was recorded for this sequence."}}</p>{{end}}
+{{if .Contact}}
+<div class="scroll"><table class="aim-samples">
+<tr><th>{{tr "Before damage (ms)"}}</th><th>{{tr "View-to-eye angle (degrees)"}}</th><th>{{tr "Speed (units/s)"}}</th><th>{{tr "Airborne"}}</th></tr>
+{{range .Contact}}<tr><td>{{.BeforeMS}}</td><td>{{if .AngleKnown}}{{printf "%.2f" .Angle}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .SpeedKnown}}{{printf "%.0f" .Speed}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .Airborne}}{{tr "Yes"}}{{else}}{{tr "No"}}{{end}}</td></tr>{{end}}
+</table></div>
+{{else if .TargetKnown}}<p class="muted">{{tr "No synchronized pre-damage samples are available."}}</p>{{end}}
+</details>
+{{else}}{{if .Shooting.Captured}}<p>{{tr "No eligible rifle shots recorded."}}</p>{{end}}{{end}}
+<details><summary>{{tr "How to interpret this"}}</summary><p class="muted">{{tr "The angle is geometric separation between recorded view direction and the damaged player's eye point at the same earlier frame. It is not aim error, a head hitbox or a bullet ray. Walls, smoke, recoil and target intent are not reconstructed. Hit-only samples cannot establish overall accuracy or reaction time."}}</p></details>
+{{end}}
+{{if .Movement}}
+<p>{{tr "Review speed before the first shot and at each shot of a rifle sequence. Speeds are frame averages; missing samples are unknown. No weapon-accuracy threshold, exact stop time or counter-strafe diagnosis is assigned."}}</p>
+{{if not .Movement.Captured}}<p>{{tr "A new parse is required for movement observations."}}</p>{{end}}
+{{range .Movement.Episodes}}
+<details class="drill"><summary>{{tr "R"}}{{.Round}} · {{.Side}} · {{clock .Time}} · {{.Weapon}} · {{tr "Shots"}}: {{.Shots}}</summary>
+{{if .Preparation}}<details><summary>{{tr "Movement before firing"}}</summary>
+<div class="scroll"><table class="flash-blinds"><tr><th>{{tr "Milliseconds before first shot"}}</th><th>{{tr "Speed (units/s)"}}</th><th>{{tr "Sample interval (ms)"}}</th><th>{{tr "Airborne"}}</th></tr>
+{{range .Preparation}}<tr><td>{{.BeforeMS}}</td><td>{{if .Known}}{{printf "%.0f" .Speed}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .WindowMS}}{{.WindowMS}}{{else}}—{{end}}</td><td>{{if .Airborne}}{{tr "Yes"}}{{else}}{{tr "No"}}{{end}}</td></tr>{{end}}</table></div></details>{{end}}
+<p>{{tr "Movement during firing"}}</p>
+<div class="scroll"><table class="utility-events"><tr><th>{{tr "Shot number"}}</th><th>{{tr "Speed (units/s)"}}</th><th>{{tr "Airborne"}}</th><th>{{tr "After first shot (ms)"}}</th><th>{{tr "Linked health damage"}}</th><th>{{tr "Sample interval (ms)"}}</th></tr>
+{{range .Fires}}<tr><td>{{.Ordinal}}</td><td>{{if .Known}}{{printf "%.0f" .Speed}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .Airborne}}{{tr "Yes"}}{{else}}{{tr "No"}}{{end}}</td><td>{{.AfterMS}}</td><td>{{if .Damage}}{{.Damage}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .WindowMS}}{{.WindowMS}}{{else}}—{{end}}</td></tr>{{end}}</table></div>
+</details>
+{{else}}{{if .Movement.Captured}}<p>{{tr "No eligible rifle shots recorded."}}</p>{{end}}{{end}}
+{{end}}
+{{if .FlashSupport}}
+<details class="skill-check">
+<summary>{{tr "Flash follow-up"}}</summary>
+<p>{{tr "Review your flash bursts and kills during recorded blindness. A single eligible flash is a temporal match, not proof that it caused the kill or an official flash assist. Partial blindness is included; no minimum duration or effectiveness score is applied."}}</p>
+<dl class="utility-totals">
+<div><dt>{{tr "Your recorded flash bursts"}}</dt><dd>{{len .FlashSupport.Flashes}}</dd></div>
+<div><dt>{{tr "Teammate kills during your flash"}}</dt><dd>{{if .FlashSupport.TimingAvailable}}{{.FlashSupport.TeammateKills}}{{else}}—{{end}}</dd></div>
+<div><dt>{{tr "Your kills during a teammate's flash"}}</dt><dd>{{if .FlashSupport.TimingAvailable}}{{.FlashSupport.SupportedKills}}{{else}}—{{end}}</dd></div>
+<div><dt>{{tr "Kills with multiple possible flashes"}}</dt><dd>{{if .FlashSupport.TimingAvailable}}{{.FlashSupport.AmbiguousKills}}{{else}}—{{end}}</dd></div>
+</dl>
+{{if not .FlashSupport.TimingAvailable}}<p>{{tr "Tick timing is unavailable. Kills were not matched to flash intervals."}}</p>{{end}}
+{{if .FlashSupport.UnclassifiedKills}}<p>{{tr "Kills without eligible attribution:"}} {{.FlashSupport.UnclassifiedKills}}</p>{{end}}
+<p class="muted">{{tr "Kill totals include only one eligible allied flash with known teams. Multiple sources, unknown teams and same-tick actions receive no individual credit. No recorded kill does not make a flash useless. Existing coaching priorities stay unchanged."}}</p>
+<details><summary>{{tr "Your flash bursts"}} ({{len .FlashSupport.Flashes}})</summary>
+{{range .FlashSupport.Flashes}}
+<details class="drill"><summary>{{tr "R"}}{{.Round}} · {{if .TimeKnown}}{{clock .Time}}{{else}}{{tr "not recorded"}}{{end}}{{if .Place}} · {{.Place}}{{end}}</summary>
+<p>{{tr "Recorded enemy targets:"}} {{.EnemyTargets}}{{if .UnclassifiedBlindings}} · {{tr "Unclassified blind events:"}} {{.UnclassifiedBlindings}}{{end}}</p>
+{{if .Blinds}}<div class="scroll"><table class="flash-blinds">
+<tr><th>{{tr "Player"}}</th><th>{{tr "Relation"}}</th><th>{{tr "Recorded blind duration (s)"}}</th></tr>
+{{range .Blinds}}<tr><td>{{if .PlayerKnown}}{{.Player}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{tr .Relation}}</td><td>{{if .DurationKnown}}{{printf "%.2f" .Seconds}}{{else}}{{tr "not recorded"}}{{end}}</td></tr>{{end}}
+</table></div>{{else}}<p>{{tr "No blind events were recorded for this flash."}}</p>{{end}}
+</details>
+{{else}}<p>{{tr "No flash bursts were recorded for you."}}</p>{{end}}
+<p class="muted">{{tr "The area is where you threw from. Enemy targets are distinct players per flash; blind records are not added across overlapping flashes."}}</p>
+</details>
+<details><summary>{{tr "Kills during recorded blindness"}} ({{len .FlashSupport.Kills}})</summary>
+{{range .FlashSupport.Kills}}
+<details class="drill"><summary>{{tr "R"}}{{.Round}} · {{clock .Time}} · {{.Killer}} → {{.Victim}}</summary>
+<p>{{tr "Attribution"}}: <strong>{{tr .State}}</strong></p>
+{{if .DelayKnown}}<p>{{tr "Since flash burst (s)"}}: {{printf "%.2f" .Seconds}}</p>{{end}}
+<p>{{tr "Possible flash sources"}}</p>
+<ul>{{range .Sources}}<li>{{if .Known}}{{.Player}}{{else}}{{tr "not recorded"}}{{end}} · {{clock .Time}}</li>{{end}}</ul>
+</details>
+{{else}}<p>{{tr "No eligible kill/blindness overlaps were recorded for you."}}</p>{{end}}
+</details>
+</details>
+{{end}}
+{{range .Checks}}
+<details class="skill-check {{.State}}" id="skill-{{.Kind}}">
+<summary>{{tr .Title}} <span class="count">{{if .Chances}}{{.Count}} / {{.Chances}}{{else}}—{{end}}</span>
+<span class="check-state">{{if eq .State "attention"}}● {{tr "Review episodes"}}{{else if eq .State "clear"}}● {{tr "No recorded episodes"}}{{else}}● {{tr "No assessment"}}{{end}}</span>
+{{if .Priority}}<span class="priority-badge">{{tr "Coach priority"}} {{.Priority}}</span>{{end}}</summary>
+{{if .Chances}}
+<p>{{tr "Recorded episodes / checked situations:"}} <strong>{{.Count}} / {{.Chances}}</strong>{{if .Count}} · T {{.TCount}} · CT {{.CTCount}}{{end}}</p>
+{{if .Count}}<p>{{tr .Observation}}</p>{{else}}<p>{{tr "This pattern was not recorded in the checked situations."}}</p>{{end}}
+{{else}}<p class="muted">{{tr "Not enough situations to assess"}}</p>{{end}}
+{{if .Evidence}}
+<div class="label">{{tr "Episodes"}}</div>
+{{if .PlaceMeaning}}<p class="muted">{{tr .PlaceMeaning}}</p>{{end}}
+<ul class="evidence">{{range .Evidence}}<li><a class="chip" href="#{{.ID}}">{{tr "R"}}{{.Round}} · {{.Side}} · {{clock .Time}}</a>{{if .Place}} · <a href="{{$.CalloutURL}}" target="_blank" rel="noopener noreferrer" title="{{tr `Map and position names — Total CS`}}">{{.Place}}</a>{{if .PlaceHint}} <span class="muted">— {{tr .PlaceHint}}</span>{{end}}{{end}}</li>{{end}}</ul>
+<p><strong>{{tr "What to try"}}</strong><br>{{tr .Action}}</p>
+{{range .Drills}}
+<details class="drill"><summary>{{tr .Title}}{{if .Minutes}} · {{.Minutes}} {{tr "min"}}{{end}}</summary>
+<p class="muted">{{tr .Where}}</p>
+<ol>{{range .Steps}}<li>{{tr .}}</li>{{end}}</ol>
+<p>{{tr "Done right:"}} {{tr .Check}}</p>
+{{if $.User}}
+<form method="post" action="/matches/{{$.Match.ID}}/practice/start" class="practice">
+<input type="hidden" name="drill" value="{{.ID}}">
+<label>{{tr "Minutes"}} <input type="number" name="minutes" value="{{.Minutes}}" min="0" max="600" required></label>
+<button class="btn" type="submit">{{tr "Start practice"}}</button>
+</form>
+{{end}}
+</details>
+{{end}}
+{{end}}
+<details><summary>{{tr "How to interpret this"}}</summary><p class="muted">{{tr .Limit}}</p></details>
+</details>
+{{end}}
+<p class="muted">{{tr .Limit}}</p>
+</details>
+{{end}}
+</div>
+<h2 id="training">{{tr "Where to start"}}</h2>
+{{range .ActivePractice}}
+<div class="panel quick-plan" role="status">
+<strong>{{tr "Practice in progress"}} · {{tr .Title}}</strong>
+<p class="muted">{{tr "Started"}} {{.StartedAt.Format "02.01 15:04"}} · {{tr "Planned"}} {{.Minutes}} {{tr "min"}}</p>
+<form method="post" action="/matches/{{$.Match.ID}}/practice/{{.ID}}/finish" class="practice">
+<label>{{tr "Actual minutes"}} <input type="number" name="minutes" value="{{.Minutes}}" min="0" max="600" required></label>
+<button class="btn" type="submit">{{tr "Finish and log practice"}}</button>
+</form>
+</div>
+{{end}}
+{{if .SkillPlan}}
+<p class="muted">{{tr "The coach selected these focuses. Open one to review the episodes and choose a drill."}}</p>
+{{range $i, $check := .SkillPlan}}
+<div class="panel quick-plan"><strong>{{inc $i}}. {{tr .Title}}</strong><p>{{tr .Action}}</p><a href="#skill-{{.Kind}}">{{tr "Review episodes and practice"}} →</a></div>
+{{end}}
+{{else}}
+<p class="muted">{{tr "No personal focus selected yet. Review the categories above; recommendations can be requested below."}}</p>
+{{end}}
+<script>
+(() => {
+  function reveal() {
+    const target = document.getElementById(location.hash.slice(1));
+    if (!target) return;
+    for (let node = target; node; node = node.parentElement) {
+      if (node.tagName === 'DETAILS') node.open = true;
+    }
+    target.scrollIntoView({block:'center'});
+  }
+  addEventListener('hashchange', reveal);
+  addEventListener('DOMContentLoaded', reveal);
+})();
+</script>
+{{end}}
+
+<details class="panel"><summary>{{tr "Detailed coaching report"}}</summary>
+{{if .Players}}
+<h2>{{tr "Recommendations"}}</h2>
+{{range .Players}}
+{{if and $.User (not .Self)}}
+<details class="panel"><summary>{{.Name}}</summary>
+{{else}}
+<div class="panel">
+  <h3>{{if .Self}}{{tr "You"}} · {{end}}{{.Name}}</h3>
+{{end}}
+  {{if .Focus}}
+  {{range $i, $f := .Focus}}
+  <div class="panel focus">
+    <h3>{{inc $i}}. {{$f.Title}}</h3>
+    <div>{{$f.Why}}</div>
+    {{with $f.Priority}}<p class="muted">{{.}}</p>{{end}}
+    <div class="label">{{tr "Drill"}}</div>
+    {{template "drill" $f}}
+    <div class="label">{{tr "Evidence"}}</div>
+    {{template "evidence" $f.Evidence}}
+  </div>
+  {{end}}
+  {{else}}
+  <p class="muted">{{tr "Nothing stands out among the patterns checked in this match."}}</p>
+  {{end}}
+{{if and $.User (not .Self)}}</details>{{else}}</div>{{end}}
+{{end}}
+{{end}}
+
+{{if .Team}}
+<h2>{{tr "As a team"}}</h2>
+{{range .Team}}
+<div class="panel focus">
+  <h3>{{.Title}}</h3>
+  <div>{{.Why}}</div>
+  <div class="label">{{tr "Try"}}</div>
+  <div>{{.Suggestion}}</div>
+  <div class="label">{{tr "Evidence"}}</div>
+  {{template "evidence" .Evidence}}
+</div>
+{{end}}
+{{end}}
+
+{{if .Notes}}
+<div class="panel muted">{{range .Notes}}<div>{{tr "Note:"}} {{.}}</div>{{end}}</div>
+{{end}}
+
+</details>
+
+{{if .PartyNames}}<p class="muted">{{tr "Your group"}}: {{range $i,$name:=.PartyNames}}{{if $i}} · {{end}}{{$name}}{{end}}{{if .User}} · <a href="/friends">{{tr "People I play with"}}</a>{{end}}</p>{{end}}
+{{if and .Teams .CanCoach}}
+<form method="post" action="/matches/{{.Match.ID}}/coach">
+  {{if ne .Match.Status "coached"}}<h2>{{tr "Recommendations"}}</h2>{{end}}
+  <details class="panel"{{if not .User}} open{{end}}>
+  <summary>{{tr "Change party"}}</summary>
+  {{if .User}}<p><a href="/friends">{{tr "People I play with"}}</a> · <button class="link" type="submit" name="use_friends" value="1">{{tr "Analyze with friends from my list"}}</button></p>{{end}}
+  <p class="muted">{{tr "Pick up to five players. The coach compares each of them with the whole lobby and looks at you as a team."}}</p>
+  <div class="grid">
+    {{range .Teams}}
+    <div class="panel">
+      <h3>{{tr .Side}}</h3>
+      {{range .Players}}<label class="pick"><input type="checkbox" name="player" value="{{.ID}}"{{if .InParty}} checked{{end}}> {{.Name}}</label>{{end}}
+    </div>
+    {{end}}
+  </div>
+  </details>
+  <button class="btn" type="submit">{{if eq .Match.Status "coached"}}{{tr "Update recommendations"}}{{else}}{{tr "Get recommendations"}}{{end}}</button>
+</form>
+{{end}}
+
+
+{{if .Result.Known}}
+<h2>{{tr "Round history"}}</h2>
+<div class="round-history" aria-label="{{tr "Round history"}}">
+{{range .Result.Rounds}}<div class="round {{.Outcome}}{{if .Switch}} switch{{end}}" title="{{tr .Outcome}} · {{.Side}} · {{tr "Kills"}}: {{.Kills}}">
+<span class="muted">{{tr "R"}}{{.Number}}</span><strong>{{.Symbol}}</strong><span>{{.Side}}</span><span>{{tr "Kills"}} {{.Kills}}</span>
+</div>{{end}}</div>
+{{end}}
+{{if .Scoreboard}}
+<h2>{{tr "Players"}}</h2>
+<div class="panel scroll"><table>
+<tr><th>{{tr "Player"}}</th><th>{{tr "Kills"}}</th><th>{{tr "Deaths"}}</th><th>{{tr "Assists"}}</th><th>{{tr "Headshots"}}</th><th>{{tr "Flashes thrown"}}</th></tr>
+{{$group := ""}}{{range .Scoreboard}}{{if ne $group .Group}}<tr class="team-heading"><th colspan="6">{{tr .Group}}</th></tr>{{$group = .Group}}{{end}}<tr{{if .Self}} class="self"{{end}}><td>{{.Name}}{{if .Self}} · {{tr "You"}}{{end}}</td><td>{{.Kills}}</td><td>{{.Deaths}}</td><td>{{.Assists}}</td><td>{{.Headshots}}</td><td>{{.Flashes}}</td></tr>{{end}}
+</table></div>
+{{end}}
+{{if .Teams}}
+<details class="panel">
+  <summary>{{tr "Movement before firing"}}</summary>
+  <p>{{tr "Review the half-second before the first shot of each rifle sequence. Speeds are averages over demo frames in units/s; 0 ms marks the first shot. Gaps are unknown, not standing still. These samples do not establish visibility, a duel, exact stop timing or counter-strafe technique."}}</p>
+  {{if .MovementCaptured}}
+  {{range .Shooting}}
+  <details>
+    <summary>{{.Name}} · {{tr "R"}}{{.Round}} {{clock .Time}} · {{.Weapon}}{{if .Place}} / {{.Place}}{{end}} · {{tr "Shots"}}: {{.Shots}}</summary>
+    <div class="scroll"><table>
+      <tr><th>{{tr "Milliseconds before first shot"}}</th><th>{{tr "Speed (units/s)"}}</th><th>{{tr "Sample interval (ms)"}}</th><th>{{tr "Airborne"}}</th></tr>
+      {{range .Movement}}<tr><td>{{.BeforeMS}}</td><td>{{if .Known}}{{printf "%.0f" .Speed}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .WindowMS}}{{.WindowMS}}{{else}}{{tr "not recorded"}}{{end}}</td><td>{{if .Airborne}}{{tr "Yes"}}{{else}}{{tr "No"}}{{end}}</td></tr>{{else}}<tr><td colspan="4">{{tr "not recorded"}}</td></tr>{{end}}
+    </table></div>
+  </details>
+  {{else}}<p>{{tr "No eligible rifle shots recorded."}}</p>{{end}}
+  {{else}}<p>{{tr "Movement history was not captured in this analysis. A newly parsed demo is required."}}</p>{{end}}
+</details>
+{{end}}
+{{if and .Teams .Diagnostics}}
+<details class="panel">
+  <summary>{{tr "Diagnostics"}}</summary>
+  <p>{{tr "Coaching checks trades, isolation, flashes, utility, opening support and economy. Crosshair placement, recoil control, target switching and counter-strafe technique are not assessed."}}</p>
+  {{if .MechanicsAvailable}}
+  <p>{{tr "Rifle pilot: descriptive observations only. Sequences group same-weapon shots with gaps up to 250 ms; single, short (2–5) and long (6+) groups do not prove taps, trigger holds or spray quality. Shots may include prefires and shooting through smoke."}}</p>
+  {{if .Mechanics}}
+  <table>
+    <tr><th>{{tr "Player"}}</th><th>{{tr "Rifle shots"}}</th><th>{{tr "Recent speed available"}}</th><th>{{tr "Above 80 units/s"}}</th><th>{{tr "Sequences: single / short / long"}}</th></tr>
+    {{range .Mechanics}}<tr><td>{{.Name}}</td><td>{{.Shots}}</td><td>{{.SpeedSamples}} / {{.Shots}}</td><td>{{.MovingSamples}} / {{.SpeedSamples}}</td><td>{{.Singles}} / {{.Short}} / {{.Long}}</td></tr>{{end}}
+  </table>
+  {{else}}<p>{{tr "No eligible rifle shots recorded."}}</p>{{end}}
+  <p class="muted">{{tr "Speed is estimated over a recent demo frame, not at the exact instant of firing. Missing samples are unknown. The 80 units/s cutoff is descriptive, not an accuracy threshold or a mistake verdict. These observations do not affect coaching priorities."}}</p>
+  {{if .DamageAvailable}}
+  <p>{{tr "Linked enemy damage events:"}} {{.LinkedDamage}} / {{.DamageEvents}} {{tr "recorded for the displayed players. Unlinked events are excluded from sequence outcomes."}}</p>
+  <details><summary>{{tr "Review shooting sequences ("}}{{len .Shooting}})</summary>
+  <p>{{tr "Enemy damage is linked only to a unique shot with the same weapon, player and tick. A shot without linked damage is not necessarily a miss. First damage is the one-based shot number in this sequence; “not recorded” is not an aim verdict."}}</p>
+  <div class="scroll"><table>
+    <tr><th>{{tr "Player"}}</th><th>{{tr "Round / time"}}</th><th>{{tr "Weapon / where"}}</th><th>{{tr "Shots"}}</th><th>{{tr "Recent speed: above 80 / available"}}</th><th>{{tr "Airborne"}}</th><th>{{tr "Shots with enemy damage"}}</th><th>{{tr "Health damage"}}</th><th>{{tr "First damage at shot"}}</th></tr>
+    {{range .Shooting}}<tr><td>{{.Name}}</td><td>{{tr "R"}}{{.Round}} {{clock .Time}}</td><td>{{.Weapon}}{{if .Place}} / {{.Place}}{{end}}</td><td>{{.Shots}}</td><td>{{.MovingSamples}} / {{.SpeedSamples}}</td><td>{{.AirborneShots}}</td><td>{{.HitShots}}</td><td>{{.HealthDamage}}</td><td>{{if .FirstHitShot}}{{.FirstHitShot}}{{else}}{{tr "not recorded"}}{{end}}</td></tr>{{end}}
+  </table></div>
+  </details>
+  {{else if .DamageCaptured}}<p>{{tr "No usable firearm damage events were recorded in this demo. Hit outcomes are unavailable; this does not mean every shot missed."}}</p>
+  {{else}}<p>{{tr "Damage links were not captured in this analysis. A new parse is required for sequence evidence."}}</p>{{end}}
+  {{else}}
+  <p>{{tr "Shooting observations are unavailable for this saved analysis. A newly parsed demo is required; requesting coaching again cannot recover missing shot data."}}</p>
+  {{end}}
+</details>
+{{end}}
+
+{{if .Findings}}
+<h2>{{tr "All findings"}}</h2>
+<details class="panel">
+  <summary>{{tr "Findings: %d" (len .Findings)}}{{if .Match.Party}} {{tr "involving your party"}}{{end}}</summary>
+  <table>
+    <tr><th>ID</th><th>{{tr "Round"}}</th><th>{{tr "Time"}}</th><th>{{tr "Where"}}</th><th>{{tr "Player"}}</th><th>{{tr "Mistake"}}</th><th>{{tr "Detail"}}</th></tr>
+    {{range .Findings}}
+    <tr id="{{.ID}}"><td>{{.ID}}</td><td>{{.Round}}</td><td>{{clock .Time}}</td><td>{{.Place}}</td><td>{{.Player}}</td><td>{{tr .Kind}}</td><td>{{.Detail}}</td></tr>
+    {{end}}
+  </table>
+</details>
+{{end}}
+{{end}}

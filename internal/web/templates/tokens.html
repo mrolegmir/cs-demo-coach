@@ -1,0 +1,65 @@
+{{define "title"}}{{tr "Auto-upload · CS Demo Coach"}}{{end}}
+{{define "content"}}
+<h1>{{tr "Auto-upload"}}</h1>
+<p class="muted">{{tr "Run"}} <code>csdc watch</code> {{tr "on the PC you play on and every demo you download in CS2 (Watch → Your Matches → Download) is uploaded here on its own. It needs an upload token; a token can only upload demos as you."}}</p>
+
+{{if .New}}
+<div class="panel focus">
+<h3>{{tr "Your new token"}}</h3>
+<p>{{tr "Copy it now: it is not shown again."}}</p>
+<p><code class="copy">{{.New}}</code></p>
+<div class="label">{{tr "Start the watcher"}}</div>
+<pre><code class="copy">CSDC_API_URL={{.APIURL}} CSDC_UPLOAD_TOKEN={{.New}} csdc watch</code></pre>
+<p class="muted">{{tr "It finds the CS2 replays folder through Steam; pass"}} <code>-dir</code> {{tr "to watch another folder. Demos already in the folder are skipped unless you add"}} <code>-all</code>.</p>
+</div>
+{{end}}
+
+<form method="post" action="/tokens" class="panel">
+<label>{{tr "Name"}} <input name="name" placeholder="{{tr `Home PC`}}" maxlength="60"></label>
+<button class="btn" type="submit">{{tr "Create an upload token"}}</button>
+</form>
+
+{{if .Tokens}}
+<div class="panel">
+<table>
+  <tr><th>{{tr "Name"}}</th><th>{{tr "Created"}}</th><th>{{tr "Last used"}}</th><th></th></tr>
+  {{range .Tokens}}
+  <tr><td>{{.Name}}</td><td>{{.Created.Format "02.01.2006"}}</td><td>{{tr (used .LastUsed)}}</td>
+      <td><form method="post" action="/tokens/{{.ID}}/delete"><button class="link" type="submit">{{tr "Revoke"}}</button></form></td></tr>
+  {{end}}
+</table>
+</div>
+{{end}}
+
+{{if .ShareCodes}}
+<h2>{{tr "Steam match history"}}</h2>
+<p class="muted">{{tr "With your match history authentication code the site sees new matches on its own, without the Download click in CS2. Create the code on Steam's help page (CS2 → \"Access to Your Match History\"); it only lets the site read your match list."}}</p>
+{{if .LinkError}}<p class="error">{{tr .LinkError}}</p>{{end}}
+{{with .Link}}
+<div class="panel{{if .Error}} focus{{end}}">
+<p>{{tr "Authentication code"}} <code>{{mask .AuthCode}}</code>{{tr ", newest match"}} <code>{{.LastCode}}</code>.</p>
+{{if .Error}}<p class="error">{{tr .Error}}</p>
+{{else if .Checked.IsZero}}<p class="muted">{{tr "Not checked yet: the first check runs within a few minutes."}}</p>
+{{else}}<p class="muted">{{tr "Last checked"}} {{.Checked.Format "02.01.2006 15:04"}}.</p>{{end}}
+<form method="post" action="/steam-link/delete"><button class="link" type="submit">{{tr "Stop reading my match history"}}</button></form>
+</div>
+{{end}}
+<form method="post" action="/steam-link" class="panel">
+<label>{{tr "Authentication code"}} <input name="auth_code" placeholder="ABCD-EFGHJ-KLMN" maxlength="20" autocomplete="off" required></label>
+<label>{{tr "Share code of your most recent match"}} <input name="share_code" placeholder="CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx" maxlength="40" autocomplete="off" required></label>
+<button class="btn" type="submit">{{if .Link}}{{tr "Update"}}{{else}}{{tr "Start reading my match history"}}{{end}}</button>
+</form>
+{{if .Codes}}
+<div class="panel">
+<p class="muted">{{tr "Matches found. Their demos are fetched from Valve on their own; a demo Valve no longer has can still be downloaded in CS2 for the watcher."}}</p>
+<table>
+  <tr><th>{{tr "Share code"}}</th><th>{{tr "Found"}}</th><th></th></tr>
+  {{range .Codes}}
+  <tr><td><code>{{.Code}}</code></td><td>{{.Found.Format "02.01.2006 15:04"}}</td>
+      <td>{{if .MatchID}}<a href="/matches/{{.MatchID}}">{{tr "report"}}</a>{{else}}{{tr (codeStatus .Status)}}{{if .Reason}} <span class="muted">{{.Reason}}</span>{{end}}{{end}}</td></tr>
+  {{end}}
+</table>
+</div>
+{{end}}
+{{end}}
+{{end}}

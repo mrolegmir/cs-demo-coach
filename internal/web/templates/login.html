@@ -1,0 +1,10 @@
+{{define "title"}}{{tr "Sign in · CS Demo Coach"}}{{end}}
+{{define "content"}}
+<h1>{{tr "Sign in"}}</h1>
+<p class="muted">{{tr "CS Demo Coach finds the one to three things each player in your party should fix, with round-by-round evidence."}}</p>
+{{if .Message}}<div class="panel error">{{tr .Message}}</div>{{end}}
+<div class="panel">
+  <p>{{tr "Sign in with your Steam account. We only receive your public SteamID, which is how your matches find you."}}</p>
+  <a class="btn" href="/auth/steam">{{tr "Sign in through Steam"}}</a>
+</div>
+{{end}}

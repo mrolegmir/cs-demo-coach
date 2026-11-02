@@ -1,0 +1,17 @@
+{{define "title"}}{{tr "Invites · CS Demo Coach"}}{{end}}
+{{define "content"}}
+<h1>{{tr "Invite friends"}}</h1>
+<p class="muted">{{tr "Each link lets one Steam account in and works for 7 days. Invite the people you play with: matches you all played in show up for everyone in them."}}</p>
+<form method="post" action="/invites"><button class="btn" type="submit">{{tr "Create an invite link"}}</button></form>
+{{if .Invites}}
+<div class="panel">
+<table>
+  <tr><th>{{tr "Link"}}</th><th>{{tr "Status"}}</th></tr>
+  {{range .Invites}}
+  <tr><td><code class="copy">{{.Link}}</code></td>
+      <td>{{if .Used}}{{tr "used"}}{{else if .Expired}}{{tr "expired"}}{{else}}{{tr "open until"}} {{.Expires.Format "02.01.2006"}}{{end}}</td></tr>
+  {{end}}
+</table>
+</div>
+{{end}}
+{{end}}

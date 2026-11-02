@@ -1,0 +1,6 @@
+bin/
+demos/
+testdata/
+.git/
+*.md
+bot/

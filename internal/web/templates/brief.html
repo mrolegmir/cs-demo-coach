@@ -1,0 +1,60 @@
+{{define "head"}}{{if .Pending}}<meta http-equiv="refresh" content="3">{{end}}{{end}}
+{{define "title"}}{{tr "Weekly brief · CS Demo Coach"}}{{end}}
+
+{{define "evidence"}}
+<ul class="evidence">
+  {{range .}}<li><a class="chip" href="{{.Link}}">{{tr "R"}}{{.Round}}{{if .Time}} {{clock .Time}}{{end}}</a> {{if .Place}}<span class="muted">{{.Place}}:</span> {{end}}{{.Detail}}</li>{{end}}
+</ul>
+{{end}}
+
+{{define "content"}}
+{{with .Brief}}
+<h1>{{tr "Weekly brief"}}</h1>
+<p class="muted">{{.PeriodStart.Format "02.01.2006"}} – {{.PeriodEnd.Format "02.01.2006"}} · {{tr "Matches: %d" .Input.Matches}} {{tr "· party:"}} {{range $i, $p := .Input.Party}}{{if $i}}, {{end}}{{$p}}{{end}}{{if .Coach}} {{tr "· coach:"}} {{.Coach}}{{end}}</p>
+{{if eq .Status "queued"}}<div class="panel">{{tr "The coach is going through your week… This page refreshes by itself."}}</div>{{end}}
+{{if eq .Status "failed"}}<div class="panel error">{{tr "The brief could not be made:"}} {{tr .Error}}</div>{{end}}
+{{end}}
+
+{{if .Players}}
+<p class="muted">{{tr "Habits are judged across all your analyzed matches, not just this week. Evidence links open the match."}}</p>
+<h2>{{tr "Focus for the weekend"}}</h2>
+{{range .Players}}
+<div class="panel">
+  <h3>{{.Name}}</h3>
+  {{if .Focus}}
+  {{range $i, $f := .Focus}}
+  <div class="panel focus">
+    <h3>{{inc $i}}. {{$f.Title}}</h3>
+    <div>{{$f.Why}}</div>
+    {{with $f.Priority}}<p class="muted">{{.}}</p>{{end}}
+    <div class="label">{{tr "Drill"}}</div>
+    {{template "drill" $f}}
+    <div class="label">{{tr "Evidence"}}</div>
+    {{template "evidence" $f.Evidence}}
+  </div>
+  {{end}}
+  {{else}}
+  <p class="muted">{{tr "No habit stands out. Keep it up."}}</p>
+  {{end}}
+</div>
+{{end}}
+{{end}}
+
+{{if .Team}}
+<h2>{{tr "As a team"}}</h2>
+{{range .Team}}
+<div class="panel focus">
+  <h3>{{.Title}}</h3>
+  <div>{{.Why}}</div>
+  <div class="label">{{tr "Try"}}</div>
+  <div>{{.Suggestion}}</div>
+  <div class="label">{{tr "Evidence"}}</div>
+  {{template "evidence" .Evidence}}
+</div>
+{{end}}
+{{end}}
+
+{{if .Notes}}
+<div class="panel muted">{{range .Notes}}<div>{{tr "Note:"}} {{.}}</div>{{end}}</div>
+{{end}}
+{{end}}

@@ -1,0 +1,60 @@
+# Local stack: Postgres, the API (http://localhost:8080) and one worker.
+#
+#   docker compose up --build
+#
+# The worker uses the rule-based coach. To use a local Ollama model instead,
+# set CSDC_LLM=ollama and CSDC_LLM_MODEL in a .env file next to this one.
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: csdc
+      POSTGRES_PASSWORD: csdc
+      POSTGRES_DB: csdc
+    ports:
+      - "55432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U csdc"]
+      interval: 2s
+      retries: 30
+
+  api:
+    build:
+      context: .
+      target: api
+    environment:
+      DATABASE_URL: postgres://csdc:csdc@db:5432/csdc
+      CSDC_DEMO_DIR: /demos
+      CSDC_WORKER_TOKEN: ${CSDC_WORKER_TOKEN:-dev-worker-token}
+    ports:
+      - "8080:8080"
+    volumes:
+      - demos:/demos
+    depends_on:
+      db:
+        condition: service_healthy
+
+  worker:
+    build:
+      context: .
+      target: worker
+    environment:
+      # No DATABASE_URL: the worker takes jobs through the API, as a remote
+      # worker on a home PC would.
+      CSDC_API_URL: http://api:8080
+      CSDC_WORKER_TOKEN: ${CSDC_WORKER_TOKEN:-dev-worker-token}
+      CSDC_LLM: ${CSDC_LLM:-rules}
+      CSDC_LLM_MODEL: ${CSDC_LLM_MODEL:-}
+      CSDC_LLM_BASE_URL: ${CSDC_LLM_BASE_URL:-http://host.docker.internal:11434}
+      CSDC_LLM_API_KEY: ${CSDC_LLM_API_KEY:-}
+    depends_on:
+      db:
+        condition: service_healthy
+      api:
+        condition: service_started
+
+volumes:
+  db:
+  demos:

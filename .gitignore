@@ -1,0 +1,32 @@
+# Local-only strategy / goals — never commit
+GOALS.local.md
+*.local.md
+
+# Secrets
+.mcp.json
+.env
+.env.*
+!.env.example
+
+# Local demo files (large, private)
+demos/
+*.dem
+
+# Go build output
+/bin/
+*.exe
+*.out
+*.test
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Local assistant instructions
+CLAUDE.md
+deploy/.env
+
+# Share-code bot (Node)
+bot/node_modules/
+bot/.session.json

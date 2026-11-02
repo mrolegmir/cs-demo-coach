@@ -1,0 +1,85 @@
+{{define "title"}}{{if .Name}}{{.Name}}{{else}}{{tr "Player"}}{{end}} {{tr "· progress · CS Demo Coach"}}{{end}}
+{{define "content"}}
+<h1>{{if .Name}}{{.Name}}{{else}}Steam {{.SteamID}}{{end}}</h1>
+<p class="muted">{{tr "Progress across %d analyzed matches, compared with everyone else in those lobbies. “Recent” is the last three matches." .Matches}}</p>
+{{with .Role}}
+<div class="panel role">
+  <strong>{{tr "Role:"}} {{if .Labels}}{{range $i, $l := .Labels}}{{if $i}}, {{end}}{{tr $l}}{{end}}{{else}}{{tr "no clear role yet"}}{{end}}</strong>
+  <div class="muted">{{tr "First fights: in"}} {{pct .OpeningRate}} {{tr "of rounds (lobby"}} {{pct .LobbyOpeningRate}}{{tr "), won"}} {{pct .OpeningWinRate}} {{tr "· Flashes that blind an enemy:"}} {{printf "%.1f" .Flashes10}} {{tr "per 10 rounds (lobby"}} {{printf "%.1f" .LobbyFlashes10}}{{tr ") · AWP:"}} {{pct .AWPShare}} {{tr "of kills"}}</div>
+</div>
+{{end}}
+
+{{if not .Issues}}
+<div class="panel">{{tr "No analyzed matches with this player yet. Upload a demo they played in."}}</div>
+{{else}}
+<div class="panel scroll">
+<table>
+  <tr><th>{{tr "Mistake"}}</th><th>{{tr "Status"}}</th><th>{{tr "Overall"}}</th><th>{{tr "Recent"}}</th><th>{{tr "Trend"}}</th><th>{{tr "Match by match"}}</th>{{if $.Own}}<th>{{tr "Practice"}}</th>{{end}}</tr>
+  {{range .Issues}}
+  <tr>
+    <td>{{tr .Label}}{{with .Where}}<br><span class="muted">{{range $i, $w := .}}{{if $i}} · {{end}}{{$w}}{{end}}</span>{{end}}</td>
+    <td><span class="status {{.Status}}">{{tr .StatusText}}</span></td>
+    <td>{{pct .Rate}} <span class="muted">{{tr "vs"}} {{pct .LobbyRate}}</span><br><span class="muted">{{.Count}} {{tr "of"}} {{.Chances}}</span></td>
+    <td>{{pct .RecentRate}} <span class="muted">{{tr "vs"}} {{pct .RecentLobby}}</span></td>
+    <td>{{if .Trend}}{{.Trend}}{{else}}<span class="muted">–</span>{{end}}</td>
+    <td>{{range .Points}}<a class="chip{{if .StandOut}} hot{{end}}" href="/matches/{{.MatchID}}" title="{{.Played.Format "02.01.2006"}}: {{.Count}} of {{.Chances}}">{{.Count}}/{{.Chances}}</a> {{end}}</td>
+    {{if $.Own}}<td class="muted">{{.Practice}}</td>{{end}}
+  </tr>
+  {{end}}
+</table>
+</div>
+<p class="muted">{{tr "The trend is the rate over every"}} {{.Window}} {{tr "matches in a row: the solid line is this player, the dashed line the lobby."}}{{if .Own}} {{tr "A dotted mark is when you started practicing that mistake."}}{{end}} {{tr "Highlighted matches are the ones where the mistake stood out against that lobby."}}</p>
+{{end}}
+
+{{if .Partners}}
+<h2 id="partners">{{tr "Trading with teammates"}}</h2>
+<p class="muted">{{tr "When one of you dies with the other as the nearest teammate, how often the killer dies within"}} {{.TradeWindow}}{{tr ", whoever gets the kill. Higher is better: low numbers mean you play too far apart to trade, or the nearer one does not swing."}}</p>
+<div class="panel scroll">
+<table>
+  <tr><th>{{tr "Teammate"}}</th><th>{{tr "When you die near them"}}</th><th>{{tr "When they die near you"}}</th></tr>
+  {{range .Partners}}
+  <tr>
+    <td><a href="{{.Link}}">{{.Name}}</a></td>
+    <td>{{if .CoveredOf}}{{pct .CoveredRate}} {{tr "traded"}} <span class="muted">{{.Covered}} {{tr "of"}} {{.CoveredOf}}</span>{{else}}<span class="muted">–</span>{{end}}</td>
+    <td>{{if .CoveringOf}}{{pct .CoveringRate}} {{tr "traded"}} <span class="muted">{{.Covering}} {{tr "of"}} {{.CoveringOf}}</span>{{else}}<span class="muted">–</span>{{end}}</td>
+  </tr>
+  {{end}}
+</table>
+</div>
+{{end}}
+
+{{if .Own}}
+<h2 id="practice">{{tr "Practice log"}}</h2>
+{{range .ActivePractice}}
+<div class="panel focus">
+<strong>{{tr "Practice in progress"}} · {{tr .Title}}</strong>
+<p class="muted">{{tr "Started"}} {{.StartedAt.Format "02.01 15:04"}} · {{tr "Planned"}} {{.Minutes}} {{tr "min"}}</p>
+<form method="post" action="/practice/{{.ID}}/finish" class="practice">
+<label>{{tr "Actual minutes"}} <input type="number" name="minutes" value="{{.Minutes}}" min="0" max="600" required></label>
+<button class="btn" type="submit">{{tr "Finish and log practice"}}</button>
+</form>
+</div>
+{{end}}
+<p class="muted">{{tr "Log what you practiced: a drill from the coach's library, or your own practice and the mistake it is for. This page and your weekly brief then compare that mistake before and after you started, so you know whether the drill works. Only you see your notes."}}</p>
+{{if .Error}}<div class="panel error">{{tr .Error}}</div>{{end}}
+<form method="post" action="/practice" class="panel practice">
+  <label class="wide">{{tr "Drill"}} <select name="drill"><option value="">{{tr "My own practice (pick the mistake)"}}</option>{{range .Drills}}<optgroup label="{{tr .Label}}">{{range .Drills}}<option value="{{.ID}}"{{if eq .ID $.Drill}} selected{{end}}>{{tr .Title}}</option>{{end}}</optgroup>{{end}}</select></label>
+  <label>{{tr "Mistake"}} <select name="kind"><option value="">{{tr "General"}}</option>{{range .Kinds}}<option value="{{.Kind}}">{{tr .Label}}</option>{{end}}</select></label>
+  <label>{{tr "Date"}} <input type="date" name="on" value="{{.Today}}" required></label>
+  <label>{{tr "Minutes"}} <input type="number" name="minutes" min="0" max="600" placeholder="20"></label>
+  <label class="wide">{{tr "What you did"}} <input name="note" maxlength="300" placeholder="{{tr `Flash practice on Mirage A site, 20 lineups (optional with a drill)`}}"></label>
+  <button class="btn" type="submit">{{tr "Add"}}</button>
+</form>
+{{if .Practice}}
+<div class="panel">
+<table>
+  <tr><th>{{tr "Date"}}</th><th>{{tr "Mistake"}}</th><th>{{tr "What you did"}}</th><th>{{tr "Minutes"}}</th><th></th></tr>
+  {{range .Practice}}
+  <tr><td>{{.On.Format "02.01.2006"}}</td><td>{{tr .Label}}</td><td>{{if and .Drill (ne .Drill .Note)}}<strong>{{tr .Drill}}</strong>: {{end}}{{.Note}}</td><td>{{if .Minutes}}{{.Minutes}}{{end}}</td>
+      <td><form method="post" action="/practice/{{.ID}}/delete"><button class="link" type="submit">{{tr "Delete"}}</button></form></td></tr>
+  {{end}}
+</table>
+</div>
+{{end}}
+{{end}}
+{{end}}

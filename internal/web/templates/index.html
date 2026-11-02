@@ -1,0 +1,45 @@
+{{define "content"}}
+<h1>{{tr "Recent matches"}}</h1>
+{{if .Error}}<div class="panel error">{{tr .Error}}</div>{{end}}
+{{if .Matches}}
+<div class="panel scroll"><table>
+<tr><th>{{tr "Map"}}</th><th>{{tr "Result"}}</th><th>{{tr "Score"}}</th><th>{{tr "Recommendations"}}</th><th>{{tr "Uploaded"}}</th></tr>
+{{range .Matches}}<tr>
+<td><a href="/matches/{{.ID}}">{{if .Map}}{{.Map}}{{else}}{{tr "Match"}}{{end}}</a></td>
+<td>{{if .Result.Known}}<span class="result {{.Result.Outcome}}" role="img" aria-label="{{tr .Result.Outcome}}" title="{{tr .Result.Outcome}}">{{.Result.Symbol}}</span>{{else}}—{{end}}</td>
+<td>{{if .Result.Known}}{{.Result.Won}} : {{.Result.Lost}}{{else}}—{{end}}</td>
+<td><a href="/matches/{{.ID}}"><span class="status {{.Status}}">{{tr .Status}}</span></a></td>
+<td class="muted">{{.UploadedAt.Format "02.01.2006 15:04"}}</td>
+</tr>{{end}}</table></div>
+{{else}}<p class="muted">{{tr "No matches yet."}}</p>{{end}}
+{{if .User}}
+<h2>{{tr "Weekly brief"}}</h2>
+{{if .BriefNotice}}<div class="panel error">{{tr .BriefNotice}}</div>{{end}}
+<div class="panel">
+<p>{{tr "Your weekly brief is prepared automatically on Friday. No action is needed."}}</p>
+{{if .Briefs}}<table>
+<tr><th>{{tr "Week"}}</th><th>{{tr "Status"}}</th></tr>
+{{range .Briefs}}<tr><td><a href="/briefs/{{.ID}}">{{.PeriodStart.Format "02.01.2006"}} – {{.PeriodEnd.Format "02.01.2006"}}</a></td><td><span class="status {{.Status}}">{{tr .Status}}</span></td></tr>{{end}}
+</table>{{end}}
+<details><summary>{{tr "Need a brief before Friday?"}}</summary>
+<p class="muted">{{tr "Request a brief for the matches available now. This uses one coaching request from your weekly limit."}}</p>
+<form method="post" action="/briefs"><button class="btn" type="submit">{{tr "Review this week so far"}}</button></form>
+</details></div>
+{{end}}
+<h2>{{tr "Settings and import"}}</h2>
+{{with .Telegram}}
+<details class="panel" id="telegram"><summary>Telegram{{if .Linked}} · {{tr "Connected"}}{{end}}</summary>
+{{if .Linked}}
+<form method="post" action="/telegram/delete"><button class="link" type="submit">{{tr "Stop sending to Telegram"}}</button></form>
+{{else}}
+<p>{{tr "Get each brief in Telegram as soon as it is ready: the focus areas, with a link to the evidence."}}</p>
+<form method="post" action="/telegram"><button class="btn" type="submit">{{tr "Connect Telegram"}}</button></form>
+{{end}}</details>{{end}}
+<details class="panel"{{if .Error}} open{{end}}><summary>{{tr "Upload a demo manually"}}</summary>
+<form method="post" action="/matches" enctype="multipart/form-data">
+<p class="muted">{{tr "A"}} <code>.dem</code> {{tr "file from CS2 (match history → download, or a FACEIT/GOTV demo). Up to 1 GB. The file is deleted after parsing; only the findings are kept."}}</p>
+{{with .Quota}}<p class="muted">{{tr "This week: %d uploads and %d coaching requests left." .UploadsLeft .CoachingLeft}}</p>{{end}}
+<input type="file" name="demo" accept=".dem" required aria-label="{{tr "Demo"}}">
+<button class="btn" type="submit">{{tr "Analyze"}}</button>
+</form></details>
+{{end}}

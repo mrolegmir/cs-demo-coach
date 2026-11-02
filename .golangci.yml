@@ -1,0 +1,32 @@
+version: "2"
+
+linters:
+  enable:
+    - bodyclose
+    - errorlint
+    - gocritic
+    - misspell
+    - nilerr
+    - revive
+    - sqlclosecheck
+    - unconvert
+    - usestdlibvars
+    - whitespace
+  settings:
+    errcheck:
+      # Closing read-only resources cannot lose data.
+      exclude-functions:
+        - (*os.File).Close
+        - (*compress/gzip.Reader).Close
+        - (io.ReadCloser).Close
+        - (*github.com/jackc/pgx/v5.Conn).Close
+        - (github.com/markus-wa/demoinfocs-golang/v5/pkg/demoinfocs.Parser).Close
+    revive:
+      rules:
+        - name: exported
+          disabled: true
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports

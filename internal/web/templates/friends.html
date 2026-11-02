@@ -1,0 +1,16 @@
+{{define "title"}}{{tr "People I play with"}} · CS Demo Coach{{end}}
+{{define "content"}}
+<h1>{{tr "People I play with"}}</h1>
+<p>{{tr "Choose your friends once. In each match, friends on your team become your group; opponents and other teammates are excluded."}}</p>
+{{if .Saved}}<div class="panel" role="status">{{tr "Friends and automatic analysis settings saved."}}</div>{{end}}
+{{if .Error}}<div class="panel error">{{tr "Enter a valid SteamID64 or a numeric Steam profile link. You can save up to 100 friends; do not add yourself."}}</div>{{end}}
+<form method="post" action="/friends" class="panel">
+<h2>{{tr "Your friends and recent teammates"}}</h2>
+{{range .Contacts}}<label class="pick"><input type="checkbox" name="friend" value="{{.ID}}"{{if .Selected}} checked{{end}}> {{if .Name}}{{.Name}}{{else}}Steam {{.ID}}{{end}} <small><a href="https://steamcommunity.com/profiles/{{.ID}}" target="_blank" rel="noopener noreferrer">Steam ↗</a></small></label>{{else}}<p class="muted">{{tr "No teammates yet. Add a friend by SteamID64 below."}}</p>{{end}}
+<p><label>{{tr "Add another friend: SteamID64 or profile link"}}<br><input name="steam_id" maxlength="100" placeholder="https://steamcommunity.com/profiles/…" style="width:100%"></label></p>
+<label class="pick"><input type="checkbox" name="automatic"{{if .Automatic}} checked{{end}}> {{tr "Automatically analyze new matches"}}</label>
+<p class="muted">{{tr "After processing, new matches are analyzed for you and your friends on the same team. This uses your weekly coaching quota. If the quota is exhausted, you can request analysis later."}}</p>
+<p class="muted">{{tr "Weekly briefs also use this friend list. Saved reports stay unchanged. You can adjust the group in an individual match."}}</p>
+<button class="btn" type="submit">{{tr "Save"}}</button>
+</form>
+{{end}}

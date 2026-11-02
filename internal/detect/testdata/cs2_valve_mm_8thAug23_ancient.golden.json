@@ -1,0 +1,5154 @@
+{
+  "findings": [
+    {
+      "id": "f1",
+      "kind": "isolated_death",
+      "player": 2,
+      "side": 2,
+      "round": 1,
+      "tick": 8770,
+      "time": 9515625000,
+      "related": [
+        4
+      ],
+      "detail": "killed by player06 with no teammate within 700u (nearest: player04, 1387u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f2",
+      "kind": "opening_death",
+      "player": 2,
+      "side": 2,
+      "round": 1,
+      "tick": 8770,
+      "time": 9515625000,
+      "detail": "died first to player06 (Glock-18) without a teammate flash on the enemy",
+      "place": "Middle"
+    },
+    {
+      "id": "f3",
+      "kind": "unused_utility",
+      "player": 2,
+      "side": 2,
+      "round": 1,
+      "tick": 8770,
+      "time": 9515625000,
+      "detail": "died holding Flashbang",
+      "place": "Middle"
+    },
+    {
+      "id": "f4",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 2,
+      "round": 1,
+      "tick": 9205,
+      "time": 16312500000,
+      "related": [
+        1
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player01, 1750u)",
+      "place": "SideHall"
+    },
+    {
+      "id": "f5",
+      "kind": "missed_trade",
+      "player": 1,
+      "side": 2,
+      "round": 1,
+      "tick": 9787,
+      "time": 25406250000,
+      "related": [
+        8
+      ],
+      "detail": "player08 was killed by player03 351u away; no trade within 5s",
+      "place": "Middle"
+    },
+    {
+      "id": "f6",
+      "kind": "isolated_death",
+      "player": 1,
+      "side": 2,
+      "round": 1,
+      "tick": 9922,
+      "time": 27515625000,
+      "related": [
+        10
+      ],
+      "detail": "killed by player03 with no teammate within 700u (nearest: player10, 1369u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f7",
+      "kind": "no_utility",
+      "player": 6,
+      "side": 1,
+      "round": 2,
+      "tick": 11479,
+      "time": 0,
+      "detail": "threw no grenade all round with $4400 of equipment"
+    },
+    {
+      "id": "f8",
+      "kind": "flash_no_enemy",
+      "player": 3,
+      "side": 1,
+      "round": 2,
+      "tick": 12160,
+      "time": 10640625000,
+      "detail": "flash blinded enemies for only 1.0s",
+      "place": "Outside"
+    },
+    {
+      "id": "f9",
+      "kind": "team_flash",
+      "player": 3,
+      "side": 1,
+      "round": 2,
+      "tick": 12160,
+      "time": 10640625000,
+      "related": [
+        7
+      ],
+      "detail": "flash blinded own team: player07",
+      "place": "Outside"
+    },
+    {
+      "id": "f10",
+      "kind": "opening_death",
+      "player": 1,
+      "side": 2,
+      "round": 2,
+      "tick": 12172,
+      "time": 10828125000,
+      "detail": "died first to player07 (MAC-10) without a teammate flash on the enemy",
+      "place": "Middle"
+    },
+    {
+      "id": "f11",
+      "kind": "missed_trade",
+      "player": 3,
+      "side": 1,
+      "round": 2,
+      "tick": 12175,
+      "time": 10875000000,
+      "related": [
+        7
+      ],
+      "detail": "player07 was killed by player02 617u away; no trade within 5s",
+      "place": "Outside"
+    },
+    {
+      "id": "f12",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 1,
+      "round": 2,
+      "tick": 12175,
+      "time": 10875000000,
+      "detail": "died holding Flashbang, HE Grenade, Molotov, Smoke Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f13",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 2,
+      "round": 2,
+      "tick": 12337,
+      "time": 13406250000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player05 with no teammate within 700u (nearest: player08, 888u)",
+      "place": "MainHall"
+    },
+    {
+      "id": "f14",
+      "kind": "isolated_death",
+      "player": 2,
+      "side": 2,
+      "round": 2,
+      "tick": 13177,
+      "time": 26531250000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player06 with no teammate within 700u (nearest: player08, 1546u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f15",
+      "kind": "unused_utility",
+      "player": 2,
+      "side": 2,
+      "round": 2,
+      "tick": 13177,
+      "time": 26531250000,
+      "detail": "died holding Flashbang",
+      "place": "Middle"
+    },
+    {
+      "id": "f16",
+      "kind": "flash_no_enemy",
+      "player": 3,
+      "side": 1,
+      "round": 2,
+      "tick": 13855,
+      "time": 37125000000,
+      "detail": "flash blinded no enemy",
+      "place": "SideHall"
+    },
+    {
+      "id": "f17",
+      "kind": "team_flash",
+      "player": 3,
+      "side": 1,
+      "round": 2,
+      "tick": 13855,
+      "time": 37125000000,
+      "related": [
+        9
+      ],
+      "detail": "flash blinded own team: player09",
+      "place": "SideHall"
+    },
+    {
+      "id": "f18",
+      "kind": "flash_no_enemy",
+      "player": 3,
+      "side": 1,
+      "round": 3,
+      "tick": 15868,
+      "time": 9328125000,
+      "detail": "flash blinded no enemy",
+      "place": "Ruins"
+    },
+    {
+      "id": "f19",
+      "kind": "missed_trade",
+      "player": 2,
+      "side": 2,
+      "round": 3,
+      "tick": 16360,
+      "time": 17015625000,
+      "related": [
+        1
+      ],
+      "detail": "player01 was killed by player07 625u away; no trade within 5s",
+      "place": "Middle"
+    },
+    {
+      "id": "f20",
+      "kind": "opening_death",
+      "player": 1,
+      "side": 2,
+      "round": 3,
+      "tick": 16360,
+      "time": 17015625000,
+      "detail": "died first to player07 (AK-47) without a teammate flash on the enemy",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f21",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 2,
+      "round": 3,
+      "tick": 16360,
+      "time": 17015625000,
+      "detail": "died holding Flashbang, Smoke Grenade",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f22",
+      "kind": "isolated_death",
+      "player": 10,
+      "side": 2,
+      "round": 3,
+      "tick": 16816,
+      "time": 24140625000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player02, 1423u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f23",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 1,
+      "round": 3,
+      "tick": 16870,
+      "time": 24984375000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player09, 1523u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f24",
+      "kind": "flash_no_enemy",
+      "player": 6,
+      "side": 1,
+      "round": 3,
+      "tick": 17221,
+      "time": 30468750000,
+      "detail": "flash blinded no enemy",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f25",
+      "kind": "flash_no_enemy",
+      "player": 7,
+      "side": 1,
+      "round": 3,
+      "tick": 17581,
+      "time": 36093750000,
+      "detail": "flash blinded enemies for only 1.0s",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f26",
+      "kind": "isolated_death",
+      "player": 7,
+      "side": 1,
+      "round": 3,
+      "tick": 17638,
+      "time": 36984375000,
+      "related": [
+        3
+      ],
+      "detail": "killed by player02 with no teammate within 700u (nearest: player03, 1538u)",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f27",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 1,
+      "round": 3,
+      "tick": 17638,
+      "time": 36984375000,
+      "detail": "died holding HE Grenade, Molotov, Smoke Grenade",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f28",
+      "kind": "missed_trade",
+      "player": 9,
+      "side": 1,
+      "round": 3,
+      "tick": 18460,
+      "time": 49828125000,
+      "related": [
+        6
+      ],
+      "detail": "player06 was killed by player08 301u away; no trade within 5s",
+      "place": "House"
+    },
+    {
+      "id": "f29",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 3,
+      "tick": 18460,
+      "time": 49828125000,
+      "detail": "died holding Molotov, Smoke Grenade",
+      "place": "House"
+    },
+    {
+      "id": "f30",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 2,
+      "round": 3,
+      "tick": 18994,
+      "time": 58171875000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player03 with no teammate within 700u (nearest: player08, 706u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f31",
+      "kind": "flash_no_enemy",
+      "player": 3,
+      "side": 1,
+      "round": 3,
+      "tick": 19855,
+      "time": 71625000000,
+      "detail": "flash blinded no enemy",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f32",
+      "kind": "unused_utility",
+      "player": 3,
+      "side": 1,
+      "round": 3,
+      "tick": 20869,
+      "time": 87468750000,
+      "detail": "died holding Molotov",
+      "place": "House"
+    },
+    {
+      "id": "f33",
+      "kind": "no_utility",
+      "player": 10,
+      "side": 2,
+      "round": 4,
+      "tick": 22420,
+      "time": 0,
+      "detail": "threw no grenade all round with $4300 of equipment"
+    },
+    {
+      "id": "f34",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 4,
+      "tick": 23662,
+      "time": 19406250000,
+      "detail": "flash blinded no enemy",
+      "place": "Outside"
+    },
+    {
+      "id": "f35",
+      "kind": "team_flash",
+      "player": 9,
+      "side": 1,
+      "round": 4,
+      "tick": 23662,
+      "time": 19406250000,
+      "related": [
+        9
+      ],
+      "detail": "flash blinded own team: self",
+      "place": "Outside"
+    },
+    {
+      "id": "f36",
+      "kind": "isolated_death",
+      "player": 1,
+      "side": 2,
+      "round": 4,
+      "tick": 23722,
+      "time": 20343750000,
+      "related": [
+        10
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player10, 833u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f37",
+      "kind": "opening_death",
+      "player": 1,
+      "side": 2,
+      "round": 4,
+      "tick": 23722,
+      "time": 20343750000,
+      "detail": "died first to player07 (AK-47) without a teammate flash on the enemy",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f38",
+      "kind": "flash_no_enemy",
+      "player": 6,
+      "side": 1,
+      "round": 4,
+      "tick": 23830,
+      "time": 22031250000,
+      "detail": "flash blinded no enemy",
+      "place": "Ramp"
+    },
+    {
+      "id": "f39",
+      "kind": "flash_no_enemy",
+      "player": 7,
+      "side": 1,
+      "round": 4,
+      "tick": 24052,
+      "time": 25500000000,
+      "detail": "flash blinded enemies for only 0.8s",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f40",
+      "kind": "missed_trade",
+      "player": 6,
+      "side": 1,
+      "round": 4,
+      "tick": 24097,
+      "time": 26203125000,
+      "related": [
+        3
+      ],
+      "detail": "player03 was killed by player10 235u away; no trade within 5s",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f41",
+      "kind": "unused_utility",
+      "player": 3,
+      "side": 1,
+      "round": 4,
+      "tick": 24097,
+      "time": 26203125000,
+      "detail": "died holding Flashbang, HE Grenade",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f42",
+      "kind": "flash_no_enemy",
+      "player": 6,
+      "side": 1,
+      "round": 4,
+      "tick": 24361,
+      "time": 30328125000,
+      "detail": "flash blinded enemies for only 0.3s",
+      "place": "Ramp"
+    },
+    {
+      "id": "f43",
+      "kind": "missed_trade",
+      "player": 4,
+      "side": 2,
+      "round": 4,
+      "tick": 24451,
+      "time": 31734375000,
+      "related": [
+        10
+      ],
+      "detail": "player10 was killed by player07 678u away; no trade within 5s",
+      "place": "Alley"
+    },
+    {
+      "id": "f44",
+      "kind": "flash_no_enemy",
+      "player": 5,
+      "side": 1,
+      "round": 4,
+      "tick": 24925,
+      "time": 39140625000,
+      "detail": "flash blinded no enemy",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f45",
+      "kind": "missed_trade",
+      "player": 7,
+      "side": 1,
+      "round": 4,
+      "tick": 25069,
+      "time": 41390625000,
+      "related": [
+        6
+      ],
+      "detail": "player06 was killed by player02 611u away; no trade within 5s",
+      "place": "Alley"
+    },
+    {
+      "id": "f46",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 4,
+      "tick": 25069,
+      "time": 41390625000,
+      "detail": "died holding Smoke Grenade",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f47",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 2,
+      "round": 4,
+      "tick": 25333,
+      "time": 45515625000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player02, 990u)",
+      "place": "Alley"
+    },
+    {
+      "id": "f48",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 2,
+      "round": 4,
+      "tick": 25333,
+      "time": 45515625000,
+      "detail": "died holding Smoke Grenade",
+      "place": "Alley"
+    },
+    {
+      "id": "f49",
+      "kind": "buy_desync",
+      "player": 4,
+      "side": 2,
+      "round": 5,
+      "tick": 27706,
+      "time": 0,
+      "detail": "bought only $200 of equipment with $4000 available while 3 teammates full-bought"
+    },
+    {
+      "id": "f50",
+      "kind": "buy_desync",
+      "player": 8,
+      "side": 2,
+      "round": 5,
+      "tick": 27706,
+      "time": 0,
+      "detail": "bought only $1700 of equipment with $3750 available while 3 teammates full-bought"
+    },
+    {
+      "id": "f51",
+      "kind": "missed_drop",
+      "player": 9,
+      "side": 1,
+      "round": 5,
+      "tick": 27706,
+      "time": 0,
+      "related": [
+        5
+      ],
+      "detail": "kept $4300 after buying while player05 ($1700) stayed without a rifle buy"
+    },
+    {
+      "id": "f52",
+      "kind": "no_utility",
+      "player": 9,
+      "side": 1,
+      "round": 5,
+      "tick": 27706,
+      "time": 0,
+      "detail": "threw no grenade all round with $3900 of equipment"
+    },
+    {
+      "id": "f53",
+      "kind": "no_utility",
+      "player": 10,
+      "side": 2,
+      "round": 5,
+      "tick": 27706,
+      "time": 0,
+      "detail": "threw no grenade all round with $4100 of equipment"
+    },
+    {
+      "id": "f54",
+      "kind": "missed_trade",
+      "player": 6,
+      "side": 1,
+      "round": 5,
+      "tick": 28315,
+      "time": 9515625000,
+      "related": [
+        7
+      ],
+      "detail": "player07 was killed by player02 176u away; no trade within 5s",
+      "place": "Middle"
+    },
+    {
+      "id": "f55",
+      "kind": "opening_death",
+      "player": 7,
+      "side": 1,
+      "round": 5,
+      "tick": 28315,
+      "time": 9515625000,
+      "detail": "died first to player02 (AK-47) without a teammate flash on the enemy",
+      "place": "Middle"
+    },
+    {
+      "id": "f56",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 1,
+      "round": 5,
+      "tick": 28315,
+      "time": 9515625000,
+      "detail": "died holding Smoke Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f57",
+      "kind": "missed_trade",
+      "player": 3,
+      "side": 1,
+      "round": 5,
+      "tick": 28336,
+      "time": 9843750000,
+      "related": [
+        6
+      ],
+      "detail": "player06 was killed by player02 375u away; no trade within 5s",
+      "place": "Outside"
+    },
+    {
+      "id": "f58",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 5,
+      "tick": 28336,
+      "time": 9843750000,
+      "detail": "died holding Flashbang, Smoke Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f59",
+      "kind": "missed_trade",
+      "player": 5,
+      "side": 1,
+      "round": 5,
+      "tick": 28645,
+      "time": 14671875000,
+      "related": [
+        3
+      ],
+      "detail": "player03 was killed by player02 201u away; no trade within 5s",
+      "place": "Outside"
+    },
+    {
+      "id": "f60",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 2,
+      "round": 5,
+      "tick": 29422,
+      "time": 26812500000,
+      "detail": "died holding Flashbang, HE Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f61",
+      "kind": "isolated_death",
+      "player": 9,
+      "side": 1,
+      "round": 5,
+      "tick": 29677,
+      "time": 30796875000,
+      "related": [
+        5
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player05, 1582u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f62",
+      "kind": "no_utility",
+      "player": 10,
+      "side": 2,
+      "round": 6,
+      "tick": 31853,
+      "time": 0,
+      "detail": "threw no grenade all round with $4300 of equipment"
+    },
+    {
+      "id": "f63",
+      "kind": "flash_no_enemy",
+      "player": 2,
+      "side": 2,
+      "round": 6,
+      "tick": 32537,
+      "time": 10687500000,
+      "detail": "flash blinded no enemy",
+      "place": "Middle"
+    },
+    {
+      "id": "f64",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 6,
+      "tick": 32549,
+      "time": 10875000000,
+      "detail": "flash blinded no enemy",
+      "place": "Outside"
+    },
+    {
+      "id": "f65",
+      "kind": "missed_trade",
+      "player": 5,
+      "side": 1,
+      "round": 6,
+      "tick": 33236,
+      "time": 21609375000,
+      "related": [
+        3
+      ],
+      "detail": "player03 was killed by player02 169u away; no trade within 5s",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f66",
+      "kind": "opening_death",
+      "player": 3,
+      "side": 1,
+      "round": 6,
+      "tick": 33236,
+      "time": 21609375000,
+      "detail": "died first to player02 (HE Grenade) without a teammate flash on the enemy",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f67",
+      "kind": "missed_trade",
+      "player": 6,
+      "side": 1,
+      "round": 6,
+      "tick": 33260,
+      "time": 21984375000,
+      "related": [
+        5
+      ],
+      "detail": "player05 was killed by player01 371u away; no trade within 5s",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f68",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 2,
+      "round": 6,
+      "tick": 33497,
+      "time": 25687500000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player08, 1326u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f69",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 2,
+      "round": 6,
+      "tick": 33497,
+      "time": 25687500000,
+      "detail": "died holding Flashbang, HE Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f70",
+      "kind": "missed_trade",
+      "player": 9,
+      "side": 1,
+      "round": 6,
+      "tick": 33884,
+      "time": 31734375000,
+      "related": [
+        7
+      ],
+      "detail": "player07 was killed by player08 357u away; no trade within 5s",
+      "place": "MainHall"
+    },
+    {
+      "id": "f71",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 6,
+      "tick": 33896,
+      "time": 31921875000,
+      "detail": "flash blinded enemies for only 0.8s",
+      "place": "MainHall"
+    },
+    {
+      "id": "f72",
+      "kind": "missed_trade",
+      "player": 2,
+      "side": 2,
+      "round": 6,
+      "tick": 34184,
+      "time": 36421875000,
+      "related": [
+        1
+      ],
+      "detail": "player01 was killed by player06 625u away; no trade within 5s",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f73",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 2,
+      "round": 6,
+      "tick": 34184,
+      "time": 36421875000,
+      "detail": "died holding HE Grenade",
+      "place": "TSideLower"
+    },
+    {
+      "id": "f74",
+      "kind": "isolated_death",
+      "player": 9,
+      "side": 1,
+      "round": 6,
+      "tick": 34430,
+      "time": 40265625000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player06, 3163u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f75",
+      "kind": "no_utility",
+      "player": 8,
+      "side": 2,
+      "round": 7,
+      "tick": 37061,
+      "time": 0,
+      "detail": "threw no grenade all round with $7150 of equipment"
+    },
+    {
+      "id": "f76",
+      "kind": "team_flash",
+      "player": 3,
+      "side": 1,
+      "round": 7,
+      "tick": 37664,
+      "time": 9421875000,
+      "related": [
+        7
+      ],
+      "detail": "flash blinded own team: player07",
+      "place": "Outside"
+    },
+    {
+      "id": "f77",
+      "kind": "missed_trade",
+      "player": 3,
+      "side": 1,
+      "round": 7,
+      "tick": 37760,
+      "time": 10921875000,
+      "related": [
+        7
+      ],
+      "detail": "player07 was killed by player02 481u away; no trade within 5s",
+      "place": "Outside"
+    },
+    {
+      "id": "f78",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 1,
+      "round": 7,
+      "tick": 37760,
+      "time": 10921875000,
+      "detail": "died holding Flashbang",
+      "place": "Middle"
+    },
+    {
+      "id": "f79",
+      "kind": "isolated_death",
+      "player": 1,
+      "side": 2,
+      "round": 7,
+      "tick": 38270,
+      "time": 18890625000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player02, 1699u)",
+      "place": "MainHall"
+    },
+    {
+      "id": "f80",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 2,
+      "round": 7,
+      "tick": 38270,
+      "time": 18890625000,
+      "detail": "died holding HE Grenade, Incendiary Grenade, Smoke Grenade",
+      "place": "MainHall"
+    },
+    {
+      "id": "f81",
+      "kind": "flash_no_enemy",
+      "player": 2,
+      "side": 2,
+      "round": 7,
+      "tick": 38300,
+      "time": 19359375000,
+      "detail": "flash blinded enemies for only 0.5s",
+      "place": "Middle"
+    },
+    {
+      "id": "f82",
+      "kind": "team_flash",
+      "player": 2,
+      "side": 2,
+      "round": 7,
+      "tick": 38300,
+      "time": 19359375000,
+      "related": [
+        8
+      ],
+      "detail": "flash blinded own team: player08",
+      "place": "Middle"
+    },
+    {
+      "id": "f83",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 1,
+      "round": 7,
+      "tick": 38339,
+      "time": 19968750000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player06, 899u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f84",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 7,
+      "tick": 38606,
+      "time": 24140625000,
+      "detail": "flash blinded no enemy",
+      "place": "Outside"
+    },
+    {
+      "id": "f85",
+      "kind": "isolated_death",
+      "player": 2,
+      "side": 2,
+      "round": 7,
+      "tick": 38945,
+      "time": 29437500000,
+      "related": [
+        10
+      ],
+      "detail": "killed by player06 with no teammate within 700u (nearest: player10, 1141u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f86",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 7,
+      "tick": 39788,
+      "time": 42609375000,
+      "detail": "died holding HE Grenade",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f87",
+      "kind": "isolated_death",
+      "player": 9,
+      "side": 1,
+      "round": 7,
+      "tick": 39803,
+      "time": 42843750000,
+      "related": [
+        3
+      ],
+      "detail": "killed by player08 with no teammate within 700u (nearest: player03, 3457u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f88",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 2,
+      "round": 7,
+      "tick": 39917,
+      "time": 44625000000,
+      "related": [
+        10
+      ],
+      "detail": "killed by player03 with no teammate within 700u (nearest: player10, 2228u)",
+      "place": "TSideLower"
+    },
+    {
+      "id": "f89",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 2,
+      "round": 7,
+      "tick": 39917,
+      "time": 44625000000,
+      "detail": "died holding HE Grenade, Smoke Grenade",
+      "place": "TSideLower"
+    },
+    {
+      "id": "f90",
+      "kind": "unused_utility",
+      "player": 3,
+      "side": 1,
+      "round": 7,
+      "tick": 41096,
+      "time": 63046875000,
+      "detail": "died holding Flashbang",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f91",
+      "kind": "no_utility",
+      "player": 3,
+      "side": 1,
+      "round": 8,
+      "tick": 43166,
+      "time": 0,
+      "detail": "threw no grenade all round with $3900 of equipment"
+    },
+    {
+      "id": "f92",
+      "kind": "no_utility",
+      "player": 5,
+      "side": 1,
+      "round": 8,
+      "tick": 43166,
+      "time": 0,
+      "detail": "threw no grenade all round with $3850 of equipment"
+    },
+    {
+      "id": "f93",
+      "kind": "no_utility",
+      "player": 7,
+      "side": 1,
+      "round": 8,
+      "tick": 43166,
+      "time": 0,
+      "detail": "threw no grenade all round with $3900 of equipment"
+    },
+    {
+      "id": "f94",
+      "kind": "isolated_death",
+      "player": 10,
+      "side": 2,
+      "round": 8,
+      "tick": 44048,
+      "time": 13781250000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player08, 1485u)",
+      "place": "MainHall"
+    },
+    {
+      "id": "f95",
+      "kind": "opening_death",
+      "player": 10,
+      "side": 2,
+      "round": 8,
+      "tick": 44048,
+      "time": 13781250000,
+      "detail": "died first to player09 (AK-47) without a teammate flash on the enemy",
+      "place": "MainHall"
+    },
+    {
+      "id": "f96",
+      "kind": "unused_utility",
+      "player": 10,
+      "side": 2,
+      "round": 8,
+      "tick": 44048,
+      "time": 13781250000,
+      "detail": "died holding HE Grenade",
+      "place": "MainHall"
+    },
+    {
+      "id": "f97",
+      "kind": "isolated_death",
+      "player": 7,
+      "side": 1,
+      "round": 8,
+      "tick": 45287,
+      "time": 33140625000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player08 with no teammate within 700u (nearest: player09, 995u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f98",
+      "kind": "isolated_death",
+      "player": 9,
+      "side": 1,
+      "round": 8,
+      "tick": 45485,
+      "time": 36234375000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player08 with no teammate within 700u (nearest: player06, 2978u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f99",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 2,
+      "round": 8,
+      "tick": 46025,
+      "time": 44671875000,
+      "related": [
+        1
+      ],
+      "detail": "killed by player06 with no teammate within 700u (nearest: player01, 940u)",
+      "place": "Ramp"
+    },
+    {
+      "id": "f100",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 2,
+      "round": 8,
+      "tick": 46025,
+      "time": 44671875000,
+      "detail": "died holding Incendiary Grenade, Smoke Grenade",
+      "place": "Ramp"
+    },
+    {
+      "id": "f101",
+      "kind": "isolated_death",
+      "player": 6,
+      "side": 1,
+      "round": 8,
+      "tick": 46766,
+      "time": 56250000000,
+      "related": [
+        3
+      ],
+      "detail": "killed by player02 with no teammate within 700u (nearest: player03, 777u)",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f102",
+      "kind": "no_utility",
+      "player": 3,
+      "side": 1,
+      "round": 9,
+      "tick": 55320,
+      "time": 0,
+      "detail": "threw no grenade all round with $3900 of equipment"
+    },
+    {
+      "id": "f103",
+      "kind": "no_utility",
+      "player": 4,
+      "side": 2,
+      "round": 9,
+      "tick": 55320,
+      "time": 0,
+      "detail": "threw no grenade all round with $4500 of equipment"
+    },
+    {
+      "id": "f104",
+      "kind": "no_utility",
+      "player": 6,
+      "side": 1,
+      "round": 9,
+      "tick": 55320,
+      "time": 0,
+      "detail": "threw no grenade all round with $3900 of equipment"
+    },
+    {
+      "id": "f105",
+      "kind": "no_utility",
+      "player": 8,
+      "side": 2,
+      "round": 9,
+      "tick": 55320,
+      "time": 0,
+      "detail": "threw no grenade all round with $6850 of equipment"
+    },
+    {
+      "id": "f106",
+      "kind": "no_utility",
+      "player": 10,
+      "side": 2,
+      "round": 9,
+      "tick": 55320,
+      "time": 0,
+      "detail": "threw no grenade all round with $4700 of equipment"
+    },
+    {
+      "id": "f107",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 9,
+      "tick": 56154,
+      "time": 13031250000,
+      "detail": "flash blinded no enemy",
+      "place": "Outside"
+    },
+    {
+      "id": "f108",
+      "kind": "isolated_death",
+      "player": 7,
+      "side": 1,
+      "round": 9,
+      "tick": 56691,
+      "time": 21421875000,
+      "related": [
+        5
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player05, 1230u)",
+      "place": "Ramp"
+    },
+    {
+      "id": "f109",
+      "kind": "opening_death",
+      "player": 7,
+      "side": 1,
+      "round": 9,
+      "tick": 56691,
+      "time": 21421875000,
+      "detail": "died first to player04 (M4A1) without a teammate flash on the enemy",
+      "place": "Ramp"
+    },
+    {
+      "id": "f110",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 9,
+      "tick": 56823,
+      "time": 23484375000,
+      "detail": "flash blinded enemies for only 0.8s",
+      "place": "MainHall"
+    },
+    {
+      "id": "f111",
+      "kind": "missed_trade",
+      "player": 2,
+      "side": 2,
+      "round": 9,
+      "tick": 56982,
+      "time": 25968750000,
+      "related": [
+        1
+      ],
+      "detail": "player01 was killed by player06 662u away; no trade within 5s",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f112",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 2,
+      "round": 9,
+      "tick": 56982,
+      "time": 25968750000,
+      "detail": "died holding HE Grenade, Incendiary Grenade, Smoke Grenade",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f113",
+      "kind": "unused_utility",
+      "player": 2,
+      "side": 2,
+      "round": 9,
+      "tick": 57204,
+      "time": 29437500000,
+      "detail": "died holding Flashbang",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f114",
+      "kind": "isolated_death",
+      "player": 6,
+      "side": 1,
+      "round": 9,
+      "tick": 57441,
+      "time": 33140625000,
+      "related": [
+        5
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player05, 906u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f115",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 9,
+      "tick": 57441,
+      "time": 33140625000,
+      "detail": "died holding HE Grenade",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f116",
+      "kind": "isolated_death",
+      "player": 9,
+      "side": 1,
+      "round": 9,
+      "tick": 57588,
+      "time": 35437500000,
+      "related": [
+        3
+      ],
+      "detail": "killed by player08 with no teammate within 700u (nearest: player03, 1260u)",
+      "place": "MainHall"
+    },
+    {
+      "id": "f117",
+      "kind": "unused_utility",
+      "player": 9,
+      "side": 1,
+      "round": 9,
+      "tick": 57588,
+      "time": 35437500000,
+      "detail": "died holding HE Grenade, Molotov",
+      "place": "MainHall"
+    },
+    {
+      "id": "f118",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 1,
+      "round": 9,
+      "tick": 58101,
+      "time": 43453125000,
+      "related": [
+        3
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player03, 1464u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f119",
+      "kind": "buy_desync",
+      "player": 3,
+      "side": 1,
+      "round": 10,
+      "tick": 59520,
+      "time": 0,
+      "detail": "bought only $200 of equipment with $3950 available while 4 teammates full-bought"
+    },
+    {
+      "id": "f120",
+      "kind": "no_utility",
+      "player": 1,
+      "side": 2,
+      "round": 10,
+      "tick": 59520,
+      "time": 0,
+      "detail": "threw no grenade all round with $4850 of equipment"
+    },
+    {
+      "id": "f121",
+      "kind": "no_utility",
+      "player": 8,
+      "side": 2,
+      "round": 10,
+      "tick": 59520,
+      "time": 0,
+      "detail": "threw no grenade all round with $6850 of equipment"
+    },
+    {
+      "id": "f122",
+      "kind": "no_utility",
+      "player": 10,
+      "side": 2,
+      "round": 10,
+      "tick": 59520,
+      "time": 0,
+      "detail": "threw no grenade all round with $4600 of equipment"
+    },
+    {
+      "id": "f123",
+      "kind": "flash_no_enemy",
+      "player": 7,
+      "side": 1,
+      "round": 10,
+      "tick": 60324,
+      "time": 12562500000,
+      "detail": "flash blinded enemies for only 1.0s",
+      "place": "TSideLower"
+    },
+    {
+      "id": "f124",
+      "kind": "missed_trade",
+      "player": 5,
+      "side": 1,
+      "round": 10,
+      "tick": 60510,
+      "time": 15468750000,
+      "related": [
+        7
+      ],
+      "detail": "player07 was killed by player04 227u away; no trade within 5s",
+      "place": "Ramp"
+    },
+    {
+      "id": "f125",
+      "kind": "opening_death",
+      "player": 7,
+      "side": 1,
+      "round": 10,
+      "tick": 60510,
+      "time": 15468750000,
+      "detail": "died first to player04 (AK-47) without a teammate flash on the enemy",
+      "place": "Ramp"
+    },
+    {
+      "id": "f126",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 1,
+      "round": 10,
+      "tick": 60510,
+      "time": 15468750000,
+      "detail": "died holding HE Grenade, Molotov, Smoke Grenade",
+      "place": "Ramp"
+    },
+    {
+      "id": "f127",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 1,
+      "round": 10,
+      "tick": 60612,
+      "time": 17062500000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player06, 916u)",
+      "place": "Ramp"
+    },
+    {
+      "id": "f128",
+      "kind": "flash_no_enemy",
+      "player": 2,
+      "side": 2,
+      "round": 10,
+      "tick": 60855,
+      "time": 20859375000,
+      "detail": "flash blinded no enemy",
+      "place": "Middle"
+    },
+    {
+      "id": "f129",
+      "kind": "isolated_death",
+      "player": 6,
+      "side": 1,
+      "round": 10,
+      "tick": 60879,
+      "time": 21234375000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player01 with no teammate within 700u (nearest: player09, 2181u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f130",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 10,
+      "tick": 60879,
+      "time": 21234375000,
+      "detail": "died holding Flashbang",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f131",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 10,
+      "tick": 61383,
+      "time": 29109375000,
+      "detail": "flash blinded enemies for only 0.7s",
+      "place": "MainHall"
+    },
+    {
+      "id": "f132",
+      "kind": "isolated_death",
+      "player": 9,
+      "side": 1,
+      "round": 10,
+      "tick": 61728,
+      "time": 34500000000,
+      "related": [
+        3
+      ],
+      "detail": "killed by player08 with no teammate within 700u (nearest: player03, 2079u)",
+      "place": "MainHall"
+    },
+    {
+      "id": "f133",
+      "kind": "unused_utility",
+      "player": 9,
+      "side": 1,
+      "round": 10,
+      "tick": 61728,
+      "time": 34500000000,
+      "detail": "died holding Molotov",
+      "place": "MainHall"
+    },
+    {
+      "id": "f134",
+      "kind": "no_utility",
+      "player": 1,
+      "side": 2,
+      "round": 11,
+      "tick": 63714,
+      "time": 0,
+      "detail": "threw no grenade all round with $4850 of equipment"
+    },
+    {
+      "id": "f135",
+      "kind": "no_utility",
+      "player": 3,
+      "side": 1,
+      "round": 11,
+      "tick": 63714,
+      "time": 0,
+      "detail": "threw no grenade all round with $6350 of equipment"
+    },
+    {
+      "id": "f136",
+      "kind": "isolated_death",
+      "player": 8,
+      "side": 2,
+      "round": 11,
+      "tick": 64794,
+      "time": 16875000000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player02, 1419u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f137",
+      "kind": "opening_death",
+      "player": 8,
+      "side": 2,
+      "round": 11,
+      "tick": 64794,
+      "time": 16875000000,
+      "detail": "died first to player07 (Galil AR) without a teammate flash on the enemy",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f138",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 11,
+      "tick": 65106,
+      "time": 21750000000,
+      "detail": "flash blinded no enemy",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f139",
+      "kind": "team_flash",
+      "player": 9,
+      "side": 1,
+      "round": 11,
+      "tick": 65106,
+      "time": 21750000000,
+      "related": [
+        5
+      ],
+      "detail": "flash blinded own team: player05",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f140",
+      "kind": "flash_no_enemy",
+      "player": 6,
+      "side": 1,
+      "round": 11,
+      "tick": 65232,
+      "time": 23718750000,
+      "detail": "flash blinded no enemy",
+      "place": "Outside"
+    },
+    {
+      "id": "f141",
+      "kind": "team_flash",
+      "player": 6,
+      "side": 1,
+      "round": 11,
+      "tick": 65232,
+      "time": 23718750000,
+      "related": [
+        6
+      ],
+      "detail": "flash blinded own team: self",
+      "place": "Outside"
+    },
+    {
+      "id": "f142",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 11,
+      "tick": 65496,
+      "time": 27843750000,
+      "detail": "flash blinded enemies for only 0.8s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f143",
+      "kind": "team_flash",
+      "player": 9,
+      "side": 1,
+      "round": 11,
+      "tick": 65496,
+      "time": 27843750000,
+      "related": [
+        7
+      ],
+      "detail": "flash blinded own team: player07",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f144",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 1,
+      "round": 11,
+      "tick": 65631,
+      "time": 29953125000,
+      "related": [
+        7
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player07, 860u)",
+      "place": "CTSpawn"
+    },
+    {
+      "id": "f145",
+      "kind": "isolated_death",
+      "player": 1,
+      "side": 2,
+      "round": 11,
+      "tick": 65820,
+      "time": 32906250000,
+      "related": [
+        4
+      ],
+      "detail": "killed by player03 with no teammate within 700u (nearest: player04, 2319u)",
+      "place": "Ramp"
+    },
+    {
+      "id": "f146",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 2,
+      "round": 11,
+      "tick": 65820,
+      "time": 32906250000,
+      "detail": "died holding Flashbang, Incendiary Grenade, Smoke Grenade",
+      "place": "Ramp"
+    },
+    {
+      "id": "f147",
+      "kind": "isolated_death",
+      "player": 10,
+      "side": 2,
+      "round": 11,
+      "tick": 65952,
+      "time": 34968750000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player02, 986u)",
+      "place": "CTSpawn"
+    },
+    {
+      "id": "f148",
+      "kind": "missed_trade",
+      "player": 9,
+      "side": 1,
+      "round": 11,
+      "tick": 65997,
+      "time": 35671875000,
+      "related": [
+        7
+      ],
+      "detail": "player07 was killed by player02 666u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f149",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 1,
+      "round": 11,
+      "tick": 65997,
+      "time": 35671875000,
+      "detail": "died holding Flashbang, HE Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f150",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 2,
+      "round": 11,
+      "tick": 66096,
+      "time": 37218750000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player03 with no teammate within 700u (nearest: player02, 1114u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f151",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 2,
+      "round": 11,
+      "tick": 66096,
+      "time": 37218750000,
+      "detail": "died holding Incendiary Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f152",
+      "kind": "missed_trade",
+      "player": 6,
+      "side": 1,
+      "round": 11,
+      "tick": 66708,
+      "time": 46781250000,
+      "related": [
+        3
+      ],
+      "detail": "player03 was killed by player02 595u away; no trade within 5s",
+      "place": "Middle"
+    },
+    {
+      "id": "f153",
+      "kind": "unused_utility",
+      "player": 3,
+      "side": 1,
+      "round": 11,
+      "tick": 66708,
+      "time": 46781250000,
+      "detail": "died holding Flashbang",
+      "place": "Middle"
+    },
+    {
+      "id": "f154",
+      "kind": "isolated_death",
+      "player": 6,
+      "side": 1,
+      "round": 11,
+      "tick": 67176,
+      "time": 54093750000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player02 with no teammate within 700u (nearest: player09, 1673u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f155",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 11,
+      "tick": 67176,
+      "time": 54093750000,
+      "detail": "died holding Incendiary Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f156",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 11,
+      "tick": 69567,
+      "time": 91453125000,
+      "detail": "flash blinded no enemy",
+      "place": "SideHall"
+    },
+    {
+      "id": "f157",
+      "kind": "no_utility",
+      "player": 3,
+      "side": 1,
+      "round": 12,
+      "tick": 71191,
+      "time": 0,
+      "detail": "threw no grenade all round with $4300 of equipment"
+    },
+    {
+      "id": "f158",
+      "kind": "no_utility",
+      "player": 5,
+      "side": 1,
+      "round": 12,
+      "tick": 71191,
+      "time": 0,
+      "detail": "threw no grenade all round with $5600 of equipment"
+    },
+    {
+      "id": "f159",
+      "kind": "no_utility",
+      "player": 7,
+      "side": 1,
+      "round": 12,
+      "tick": 71191,
+      "time": 0,
+      "detail": "threw no grenade all round with $3900 of equipment"
+    },
+    {
+      "id": "f160",
+      "kind": "isolated_death",
+      "player": 2,
+      "side": 2,
+      "round": 12,
+      "tick": 71824,
+      "time": 9890625000,
+      "related": [
+        1
+      ],
+      "detail": "killed by player05 with no teammate within 700u (nearest: player01, 854u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f161",
+      "kind": "opening_death",
+      "player": 2,
+      "side": 2,
+      "round": 12,
+      "tick": 71824,
+      "time": 9890625000,
+      "detail": "died first to player05 (AWP) without a teammate flash on the enemy",
+      "place": "Middle"
+    },
+    {
+      "id": "f162",
+      "kind": "unused_utility",
+      "player": 2,
+      "side": 2,
+      "round": 12,
+      "tick": 71824,
+      "time": 9890625000,
+      "detail": "died holding Flashbang, HE Grenade, Smoke Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f163",
+      "kind": "isolated_death",
+      "player": 8,
+      "side": 2,
+      "round": 12,
+      "tick": 72361,
+      "time": 18281250000,
+      "related": [
+        1
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player01, 1838u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f164",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 2,
+      "round": 12,
+      "tick": 72943,
+      "time": 27375000000,
+      "detail": "died holding Incendiary Grenade, Smoke Grenade",
+      "place": "House"
+    },
+    {
+      "id": "f165",
+      "kind": "isolated_death",
+      "player": 3,
+      "side": 1,
+      "round": 12,
+      "tick": 73156,
+      "time": 30703125000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player06, 867u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f166",
+      "kind": "unused_utility",
+      "player": 3,
+      "side": 1,
+      "round": 12,
+      "tick": 73156,
+      "time": 30703125000,
+      "detail": "died holding Flashbang",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f167",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 1,
+      "round": 12,
+      "tick": 73207,
+      "time": 31500000000,
+      "related": [
+        7
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player07, 1413u)",
+      "place": "House"
+    },
+    {
+      "id": "f168",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 12,
+      "tick": 73288,
+      "time": 32765625000,
+      "detail": "flash blinded no enemy",
+      "place": "MainHall"
+    },
+    {
+      "id": "f169",
+      "kind": "flash_no_enemy",
+      "player": 4,
+      "side": 2,
+      "round": 12,
+      "tick": 73534,
+      "time": 36609375000,
+      "detail": "flash blinded no enemy",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f170",
+      "kind": "missed_trade",
+      "player": 7,
+      "side": 1,
+      "round": 12,
+      "tick": 73831,
+      "time": 41250000000,
+      "related": [
+        9
+      ],
+      "detail": "player09 was killed by player10 385u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f171",
+      "kind": "flash_no_enemy",
+      "player": 4,
+      "side": 2,
+      "round": 12,
+      "tick": 74500,
+      "time": 51703125000,
+      "detail": "flash blinded no enemy",
+      "place": "Middle"
+    },
+    {
+      "id": "f172",
+      "kind": "isolated_death",
+      "player": 10,
+      "side": 2,
+      "round": 12,
+      "tick": 74845,
+      "time": 57093750000,
+      "related": [
+        4
+      ],
+      "detail": "killed by player06 with no teammate within 700u (nearest: player04, 1053u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f173",
+      "kind": "unused_utility",
+      "player": 3,
+      "side": 1,
+      "round": 13,
+      "tick": 77470,
+      "time": 7734375000,
+      "detail": "died holding Flashbang, HE Grenade, Smoke Grenade",
+      "place": "Ruins"
+    },
+    {
+      "id": "f174",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 1,
+      "round": 13,
+      "tick": 77692,
+      "time": 11203125000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player02 with no teammate within 700u (nearest: player09, 1006u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f175",
+      "kind": "unused_utility",
+      "player": 5,
+      "side": 1,
+      "round": 13,
+      "tick": 77692,
+      "time": 11203125000,
+      "detail": "died holding HE Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f176",
+      "kind": "flash_no_enemy",
+      "player": 2,
+      "side": 2,
+      "round": 13,
+      "tick": 79324,
+      "time": 36703125000,
+      "detail": "flash blinded no enemy",
+      "place": "Middle"
+    },
+    {
+      "id": "f177",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 1,
+      "round": 13,
+      "tick": 79402,
+      "time": 37921875000,
+      "detail": "flash blinded no enemy",
+      "place": "MainHall"
+    },
+    {
+      "id": "f178",
+      "kind": "isolated_death",
+      "player": 6,
+      "side": 1,
+      "round": 13,
+      "tick": 80224,
+      "time": 50765625000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player01 with no teammate within 700u (nearest: player09, 2536u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f179",
+      "kind": "missed_trade",
+      "player": 9,
+      "side": 1,
+      "round": 13,
+      "tick": 80224,
+      "time": 50765625000,
+      "related": [
+        7
+      ],
+      "detail": "player07 was killed by player04 126u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f180",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 13,
+      "tick": 80224,
+      "time": 50765625000,
+      "detail": "died holding Flashbang, Smoke Grenade",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f181",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 1,
+      "round": 13,
+      "tick": 80224,
+      "time": 50765625000,
+      "detail": "died holding Flashbang, Smoke Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f182",
+      "kind": "unused_utility",
+      "player": 9,
+      "side": 1,
+      "round": 13,
+      "tick": 80539,
+      "time": 55687500000,
+      "detail": "died holding Smoke Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f183",
+      "kind": "no_utility",
+      "player": 1,
+      "side": 2,
+      "round": 14,
+      "tick": 81946,
+      "time": 0,
+      "detail": "threw no grenade all round with $4750 of equipment"
+    },
+    {
+      "id": "f184",
+      "kind": "no_utility",
+      "player": 5,
+      "side": 1,
+      "round": 14,
+      "tick": 81946,
+      "time": 0,
+      "detail": "threw no grenade all round with $3900 of equipment"
+    },
+    {
+      "id": "f185",
+      "kind": "flash_no_enemy",
+      "player": 10,
+      "side": 2,
+      "round": 14,
+      "tick": 82765,
+      "time": 12796875000,
+      "detail": "flash blinded no enemy",
+      "place": "Alley"
+    },
+    {
+      "id": "f186",
+      "kind": "isolated_death",
+      "player": 7,
+      "side": 1,
+      "round": 14,
+      "tick": 83443,
+      "time": 23390625000,
+      "related": [
+        5
+      ],
+      "detail": "killed by player08 with no teammate within 700u (nearest: player05, 956u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f187",
+      "kind": "opening_death",
+      "player": 7,
+      "side": 1,
+      "round": 14,
+      "tick": 83443,
+      "time": 23390625000,
+      "detail": "died first to player08 (AK-47) without a teammate flash on the enemy",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f188",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 1,
+      "round": 14,
+      "tick": 83443,
+      "time": 23390625000,
+      "detail": "died holding Flashbang",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f189",
+      "kind": "team_flash",
+      "player": 9,
+      "side": 1,
+      "round": 14,
+      "tick": 83851,
+      "time": 29765625000,
+      "related": [
+        5,
+        6
+      ],
+      "detail": "flash blinded own team: player05, player06",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f190",
+      "kind": "missed_trade",
+      "player": 4,
+      "side": 2,
+      "round": 14,
+      "tick": 84052,
+      "time": 32906250000,
+      "related": [
+        8
+      ],
+      "detail": "player08 was killed by player06 216u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f191",
+      "kind": "missed_trade",
+      "player": 5,
+      "side": 1,
+      "round": 14,
+      "tick": 84382,
+      "time": 38062500000,
+      "related": [
+        6
+      ],
+      "detail": "player06 was killed by player10 575u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f192",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 14,
+      "tick": 84382,
+      "time": 38062500000,
+      "detail": "died holding Flashbang, Smoke Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f193",
+      "kind": "missed_trade",
+      "player": 9,
+      "side": 1,
+      "round": 14,
+      "tick": 84517,
+      "time": 40171875000,
+      "related": [
+        5
+      ],
+      "detail": "player05 was killed by player10 326u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f194",
+      "kind": "flash_no_enemy",
+      "player": 4,
+      "side": 2,
+      "round": 14,
+      "tick": 84724,
+      "time": 43406250000,
+      "detail": "flash blinded no enemy",
+      "place": "CTSpawn"
+    },
+    {
+      "id": "f195",
+      "kind": "no_utility",
+      "player": 4,
+      "side": 2,
+      "round": 15,
+      "tick": 86203,
+      "time": 0,
+      "detail": "threw no grenade all round with $8050 of equipment"
+    },
+    {
+      "id": "f196",
+      "kind": "isolated_death",
+      "player": 10,
+      "side": 2,
+      "round": 15,
+      "tick": 87244,
+      "time": 16265625000,
+      "related": [
+        1
+      ],
+      "detail": "killed by player05 with no teammate within 700u (nearest: player01, 754u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f197",
+      "kind": "opening_death",
+      "player": 10,
+      "side": 2,
+      "round": 15,
+      "tick": 87244,
+      "time": 16265625000,
+      "detail": "died first to player05 (SG 553) without a teammate flash on the enemy",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f198",
+      "kind": "unused_utility",
+      "player": 10,
+      "side": 2,
+      "round": 15,
+      "tick": 87244,
+      "time": 16265625000,
+      "detail": "died holding Flashbang, Smoke Grenade",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f199",
+      "kind": "isolated_death",
+      "player": 1,
+      "side": 2,
+      "round": 15,
+      "tick": 87931,
+      "time": 27000000000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player02, 1379u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f200",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 2,
+      "round": 15,
+      "tick": 87931,
+      "time": 27000000000,
+      "detail": "died holding HE Grenade, Incendiary Grenade, Smoke Grenade",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f201",
+      "kind": "isolated_death",
+      "player": 6,
+      "side": 1,
+      "round": 15,
+      "tick": 88171,
+      "time": 30750000000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player02 with no teammate within 700u (nearest: player09, 2022u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f202",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 1,
+      "round": 15,
+      "tick": 88171,
+      "time": 30750000000,
+      "detail": "died holding Flashbang, HE Grenade, Smoke Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f203",
+      "kind": "flash_no_enemy",
+      "player": 2,
+      "side": 2,
+      "round": 15,
+      "tick": 88906,
+      "time": 42234375000,
+      "detail": "flash blinded enemies for only 0.8s",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f204",
+      "kind": "missed_trade",
+      "player": 8,
+      "side": 2,
+      "round": 15,
+      "tick": 89155,
+      "time": 46125000000,
+      "related": [
+        4
+      ],
+      "detail": "player04 was killed by player05 629u away; no trade within 5s",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f205",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 2,
+      "round": 15,
+      "tick": 89155,
+      "time": 46125000000,
+      "detail": "died holding Flashbang, HE Grenade, Incendiary Grenade, Smoke Grenade",
+      "place": "Alley"
+    },
+    {
+      "id": "f206",
+      "kind": "isolated_death",
+      "player": 2,
+      "side": 2,
+      "round": 15,
+      "tick": 89659,
+      "time": 54000000000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player05 with no teammate within 700u (nearest: player08, 709u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f207",
+      "kind": "flash_no_enemy",
+      "player": 7,
+      "side": 2,
+      "round": 16,
+      "tick": 93881,
+      "time": 19125000000,
+      "detail": "flash blinded no enemy",
+      "place": "SideHall"
+    },
+    {
+      "id": "f208",
+      "kind": "missed_trade",
+      "player": 9,
+      "side": 2,
+      "round": 16,
+      "tick": 94181,
+      "time": 23812500000,
+      "related": [
+        6
+      ],
+      "detail": "player06 was killed by player04 578u away; no trade within 5s",
+      "place": "Alley"
+    },
+    {
+      "id": "f209",
+      "kind": "opening_death",
+      "player": 6,
+      "side": 2,
+      "round": 16,
+      "tick": 94181,
+      "time": 23812500000,
+      "detail": "died first to player04 (Glock-18) without a teammate flash on the enemy",
+      "place": "Alley"
+    },
+    {
+      "id": "f210",
+      "kind": "isolated_death",
+      "player": 2,
+      "side": 1,
+      "round": 16,
+      "tick": 94304,
+      "time": 25734375000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player08, 1034u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f211",
+      "kind": "missed_trade",
+      "player": 7,
+      "side": 2,
+      "round": 16,
+      "tick": 94514,
+      "time": 29015625000,
+      "related": [
+        5
+      ],
+      "detail": "player05 was killed by player10 441u away; no trade within 5s",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f212",
+      "kind": "missed_trade",
+      "player": 8,
+      "side": 1,
+      "round": 16,
+      "tick": 94526,
+      "time": 29203125000,
+      "related": [
+        4
+      ],
+      "detail": "player04 was killed by player09 549u away; no trade within 5s",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f213",
+      "kind": "missed_trade",
+      "player": 1,
+      "side": 1,
+      "round": 16,
+      "tick": 94883,
+      "time": 34781250000,
+      "related": [
+        8
+      ],
+      "detail": "player08 was killed by player09 301u away; no trade within 5s",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f214",
+      "kind": "isolated_death",
+      "player": 1,
+      "side": 1,
+      "round": 16,
+      "tick": 95309,
+      "time": 41437500000,
+      "related": [
+        10
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player10, 976u)",
+      "place": "Alley"
+    },
+    {
+      "id": "f215",
+      "kind": "isolated_death",
+      "player": 7,
+      "side": 2,
+      "round": 16,
+      "tick": 95456,
+      "time": 43734375000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player09, 744u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f216",
+      "kind": "buy_desync",
+      "player": 10,
+      "side": 1,
+      "round": 17,
+      "tick": 97640,
+      "time": 0,
+      "detail": "bought only $1800 of equipment with $4950 available while 3 teammates full-bought"
+    },
+    {
+      "id": "f217",
+      "kind": "no_utility",
+      "player": 1,
+      "side": 1,
+      "round": 17,
+      "tick": 97640,
+      "time": 0,
+      "detail": "threw no grenade all round with $3750 of equipment"
+    },
+    {
+      "id": "f218",
+      "kind": "no_utility",
+      "player": 8,
+      "side": 1,
+      "round": 17,
+      "tick": 97640,
+      "time": 0,
+      "detail": "threw no grenade all round with $3900 of equipment"
+    },
+    {
+      "id": "f219",
+      "kind": "flash_no_enemy",
+      "player": 2,
+      "side": 1,
+      "round": 17,
+      "tick": 98165,
+      "time": 8203125000,
+      "detail": "flash blinded no enemy",
+      "place": "TSpawn"
+    },
+    {
+      "id": "f220",
+      "kind": "missed_trade",
+      "player": 9,
+      "side": 2,
+      "round": 17,
+      "tick": 98513,
+      "time": 13640625000,
+      "related": [
+        5
+      ],
+      "detail": "player05 was killed by player04 270u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f221",
+      "kind": "opening_death",
+      "player": 5,
+      "side": 2,
+      "round": 17,
+      "tick": 98513,
+      "time": 13640625000,
+      "detail": "died first to player04 (AK-47) without a teammate flash on the enemy",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f222",
+      "kind": "unused_utility",
+      "player": 5,
+      "side": 2,
+      "round": 17,
+      "tick": 98513,
+      "time": 13640625000,
+      "detail": "died holding HE Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f223",
+      "kind": "unused_utility",
+      "player": 2,
+      "side": 1,
+      "round": 17,
+      "tick": 98843,
+      "time": 18796875000,
+      "detail": "died holding HE Grenade, Smoke Grenade",
+      "place": "MainHall"
+    },
+    {
+      "id": "f224",
+      "kind": "isolated_death",
+      "player": 9,
+      "side": 2,
+      "round": 17,
+      "tick": 98948,
+      "time": 20437500000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player06, 2216u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f225",
+      "kind": "unused_utility",
+      "player": 9,
+      "side": 2,
+      "round": 17,
+      "tick": 98948,
+      "time": 20437500000,
+      "detail": "died holding Flashbang",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f226",
+      "kind": "missed_trade",
+      "player": 4,
+      "side": 1,
+      "round": 17,
+      "tick": 99812,
+      "time": 33937500000,
+      "related": [
+        8
+      ],
+      "detail": "player08 was killed by player06 375u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f227",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 1,
+      "round": 17,
+      "tick": 99821,
+      "time": 34078125000,
+      "detail": "died holding Flashbang",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f228",
+      "kind": "isolated_death",
+      "player": 7,
+      "side": 2,
+      "round": 17,
+      "tick": 99956,
+      "time": 36187500000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player06, 922u)",
+      "place": "SideHall"
+    },
+    {
+      "id": "f229",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 2,
+      "round": 17,
+      "tick": 100349,
+      "time": 42328125000,
+      "detail": "died holding HE Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f230",
+      "kind": "flash_no_enemy",
+      "player": 2,
+      "side": 1,
+      "round": 18,
+      "tick": 102275,
+      "time": 8109375000,
+      "detail": "flash blinded no enemy",
+      "place": "TSpawn"
+    },
+    {
+      "id": "f231",
+      "kind": "team_flash",
+      "player": 2,
+      "side": 1,
+      "round": 18,
+      "tick": 102275,
+      "time": 8109375000,
+      "related": [
+        8
+      ],
+      "detail": "flash blinded own team: player08",
+      "place": "TSpawn"
+    },
+    {
+      "id": "f232",
+      "kind": "flash_no_enemy",
+      "player": 5,
+      "side": 2,
+      "round": 18,
+      "tick": 102500,
+      "time": 11625000000,
+      "detail": "flash blinded no enemy",
+      "place": "Alley"
+    },
+    {
+      "id": "f233",
+      "kind": "missed_trade",
+      "player": 7,
+      "side": 2,
+      "round": 18,
+      "tick": 102812,
+      "time": 16500000000,
+      "related": [
+        9
+      ],
+      "detail": "player09 was killed by player10 371u away; no trade within 5s",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f234",
+      "kind": "opening_death",
+      "player": 9,
+      "side": 2,
+      "round": 18,
+      "tick": 102812,
+      "time": 16500000000,
+      "detail": "died first to player10 (AK-47) without a teammate flash on the enemy",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f235",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 2,
+      "round": 18,
+      "tick": 103010,
+      "time": 19593750000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player06, 1281u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f236",
+      "kind": "missed_trade",
+      "player": 2,
+      "side": 1,
+      "round": 18,
+      "tick": 103043,
+      "time": 20109375000,
+      "related": [
+        8
+      ],
+      "detail": "player08 was killed by player06 499u away; no trade within 5s",
+      "place": "Middle"
+    },
+    {
+      "id": "f237",
+      "kind": "isolated_death",
+      "player": 10,
+      "side": 1,
+      "round": 18,
+      "tick": 103268,
+      "time": 23625000000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player02, 2051u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f238",
+      "kind": "isolated_death",
+      "player": 6,
+      "side": 2,
+      "round": 18,
+      "tick": 104261,
+      "time": 39140625000,
+      "related": [
+        7
+      ],
+      "detail": "killed by player01 with no teammate within 700u (nearest: player07, 1323u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f239",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 2,
+      "round": 18,
+      "tick": 104261,
+      "time": 39140625000,
+      "detail": "died holding Flashbang, HE Grenade",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f240",
+      "kind": "missed_trade",
+      "player": 2,
+      "side": 1,
+      "round": 19,
+      "tick": 106601,
+      "time": 12796875000,
+      "related": [
+        1
+      ],
+      "detail": "player01 was killed by player07 355u away; no trade within 5s",
+      "place": "Outside"
+    },
+    {
+      "id": "f241",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 1,
+      "round": 19,
+      "tick": 106601,
+      "time": 12796875000,
+      "detail": "died holding Flashbang, HE Grenade, Molotov, Smoke Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f242",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 2,
+      "round": 19,
+      "tick": 106688,
+      "time": 14156250000,
+      "detail": "flash blinded no enemy",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f243",
+      "kind": "missed_trade",
+      "player": 7,
+      "side": 2,
+      "round": 19,
+      "tick": 106904,
+      "time": 17531250000,
+      "related": [
+        6
+      ],
+      "detail": "player06 was killed by player10 526u away; no trade within 5s",
+      "place": "Middle"
+    },
+    {
+      "id": "f244",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 2,
+      "round": 19,
+      "tick": 106904,
+      "time": 17531250000,
+      "detail": "died holding Flashbang, HE Grenade",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f245",
+      "kind": "flash_no_enemy",
+      "player": 7,
+      "side": 2,
+      "round": 19,
+      "tick": 106952,
+      "time": 18281250000,
+      "detail": "flash blinded enemies for only 0.5s",
+      "place": "Middle"
+    },
+    {
+      "id": "f246",
+      "kind": "isolated_death",
+      "player": 7,
+      "side": 2,
+      "round": 19,
+      "tick": 107198,
+      "time": 22125000000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player09, 1133u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f247",
+      "kind": "flash_no_enemy",
+      "player": 4,
+      "side": 1,
+      "round": 19,
+      "tick": 107636,
+      "time": 28968750000,
+      "detail": "flash blinded no enemy",
+      "place": "Ramp"
+    },
+    {
+      "id": "f248",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 1,
+      "round": 19,
+      "tick": 107906,
+      "time": 33187500000,
+      "detail": "died holding Smoke Grenade",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f249",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 2,
+      "round": 19,
+      "tick": 108212,
+      "time": 37968750000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player10 with no teammate within 700u (nearest: player09, 1820u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f250",
+      "kind": "isolated_death",
+      "player": 8,
+      "side": 1,
+      "round": 19,
+      "tick": 109526,
+      "time": 58500000000,
+      "related": [
+        2
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player02, 1229u)",
+      "place": "Ramp"
+    },
+    {
+      "id": "f251",
+      "kind": "missed_trade",
+      "player": 2,
+      "side": 1,
+      "round": 19,
+      "tick": 110135,
+      "time": 68015625000,
+      "related": [
+        10
+      ],
+      "detail": "player10 was killed by player09 500u away; no trade within 5s",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f252",
+      "kind": "unused_utility",
+      "player": 10,
+      "side": 1,
+      "round": 19,
+      "tick": 110135,
+      "time": 68015625000,
+      "detail": "died holding HE Grenade",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f253",
+      "kind": "missed_drop",
+      "player": 2,
+      "side": 1,
+      "round": 20,
+      "tick": 112727,
+      "time": 0,
+      "related": [
+        8
+      ],
+      "detail": "kept $5000 after buying while player08 ($200) stayed without a rifle buy"
+    },
+    {
+      "id": "f254",
+      "kind": "missed_drop",
+      "player": 4,
+      "side": 1,
+      "round": 20,
+      "tick": 112727,
+      "time": 0,
+      "related": [
+        8
+      ],
+      "detail": "kept $3400 after buying while player08 ($200) stayed without a rifle buy"
+    },
+    {
+      "id": "f255",
+      "kind": "missed_drop",
+      "player": 10,
+      "side": 1,
+      "round": 20,
+      "tick": 112727,
+      "time": 0,
+      "related": [
+        8
+      ],
+      "detail": "kept $5350 after buying while player08 ($200) stayed without a rifle buy"
+    },
+    {
+      "id": "f256",
+      "kind": "no_utility",
+      "player": 5,
+      "side": 2,
+      "round": 20,
+      "tick": 112727,
+      "time": 0,
+      "detail": "threw no grenade all round with $4900 of equipment"
+    },
+    {
+      "id": "f257",
+      "kind": "flash_no_enemy",
+      "player": 9,
+      "side": 2,
+      "round": 20,
+      "tick": 113699,
+      "time": 15187500000,
+      "detail": "flash blinded no enemy",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f258",
+      "kind": "missed_trade",
+      "player": 10,
+      "side": 1,
+      "round": 20,
+      "tick": 113711,
+      "time": 15375000000,
+      "related": [
+        2
+      ],
+      "detail": "player02 was killed by player05 549u away; no trade within 5s",
+      "place": "Ruins"
+    },
+    {
+      "id": "f259",
+      "kind": "opening_death",
+      "player": 2,
+      "side": 1,
+      "round": 20,
+      "tick": 113711,
+      "time": 15375000000,
+      "detail": "died first to player05 (AUG) without a teammate flash on the enemy",
+      "place": "Ramp"
+    },
+    {
+      "id": "f260",
+      "kind": "unused_utility",
+      "player": 2,
+      "side": 1,
+      "round": 20,
+      "tick": 113711,
+      "time": 15375000000,
+      "detail": "died holding Flashbang, HE Grenade, Smoke Grenade",
+      "place": "Ramp"
+    },
+    {
+      "id": "f261",
+      "kind": "isolated_death",
+      "player": 1,
+      "side": 1,
+      "round": 20,
+      "tick": 113870,
+      "time": 17859375000,
+      "related": [
+        10
+      ],
+      "detail": "killed by player07 with no teammate within 700u (nearest: player10, 1424u)",
+      "place": "Middle"
+    },
+    {
+      "id": "f262",
+      "kind": "unused_utility",
+      "player": 1,
+      "side": 1,
+      "round": 20,
+      "tick": 113870,
+      "time": 17859375000,
+      "detail": "died holding Flashbang, Molotov, Smoke Grenade",
+      "place": "Middle"
+    },
+    {
+      "id": "f263",
+      "kind": "flash_no_enemy",
+      "player": 4,
+      "side": 1,
+      "round": 20,
+      "tick": 114371,
+      "time": 25687500000,
+      "detail": "flash blinded no enemy",
+      "place": "MainHall"
+    },
+    {
+      "id": "f264",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 2,
+      "round": 20,
+      "tick": 114755,
+      "time": 31687500000,
+      "detail": "died holding Molotov",
+      "place": "Middle"
+    },
+    {
+      "id": "f265",
+      "kind": "isolated_death",
+      "player": 10,
+      "side": 1,
+      "round": 20,
+      "tick": 114905,
+      "time": 34031250000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player05 with no teammate within 700u (nearest: player08, 1570u)",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f266",
+      "kind": "unused_utility",
+      "player": 10,
+      "side": 1,
+      "round": 20,
+      "tick": 114905,
+      "time": 34031250000,
+      "detail": "died holding Flashbang",
+      "place": "TSideUpper"
+    },
+    {
+      "id": "f267",
+      "kind": "isolated_death",
+      "player": 9,
+      "side": 2,
+      "round": 20,
+      "tick": 115262,
+      "time": 39609375000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player04 with no teammate within 700u (nearest: player06, 1517u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f268",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 1,
+      "round": 20,
+      "tick": 116174,
+      "time": 53859375000,
+      "related": [
+        8
+      ],
+      "detail": "killed by player06 with no teammate within 700u (nearest: player08, 3583u)",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f269",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 1,
+      "round": 20,
+      "tick": 116174,
+      "time": 53859375000,
+      "detail": "died holding Flashbang, Smoke Grenade",
+      "place": "BombsiteA"
+    },
+    {
+      "id": "f270",
+      "kind": "missed_drop",
+      "player": 10,
+      "side": 1,
+      "round": 21,
+      "tick": 121497,
+      "time": 0,
+      "related": [
+        1,
+        8
+      ],
+      "detail": "kept $3550 after buying while player01 ($700), player08 ($2250) stayed without a rifle buy"
+    },
+    {
+      "id": "f271",
+      "kind": "no_utility",
+      "player": 7,
+      "side": 2,
+      "round": 21,
+      "tick": 121497,
+      "time": 0,
+      "detail": "threw no grenade all round with $3850 of equipment"
+    },
+    {
+      "id": "f272",
+      "kind": "isolated_death",
+      "player": 5,
+      "side": 2,
+      "round": 21,
+      "tick": 122382,
+      "time": 13828125000,
+      "related": [
+        6
+      ],
+      "detail": "killed by player02 with no teammate within 700u (nearest: player06, 866u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f273",
+      "kind": "opening_death",
+      "player": 5,
+      "side": 2,
+      "round": 21,
+      "tick": 122382,
+      "time": 13828125000,
+      "detail": "died first to player02 (AK-47) without a teammate flash on the enemy",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f274",
+      "kind": "unused_utility",
+      "player": 5,
+      "side": 2,
+      "round": 21,
+      "tick": 122382,
+      "time": 13828125000,
+      "detail": "died holding Flashbang, HE Grenade, Smoke Grenade",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f275",
+      "kind": "team_flash",
+      "player": 6,
+      "side": 2,
+      "round": 21,
+      "tick": 122478,
+      "time": 15328125000,
+      "related": [
+        6
+      ],
+      "detail": "flash blinded own team: self",
+      "place": "Alley"
+    },
+    {
+      "id": "f276",
+      "kind": "isolated_death",
+      "player": 10,
+      "side": 1,
+      "round": 21,
+      "tick": 122730,
+      "time": 19265625000,
+      "related": [
+        1
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player01, 2585u)",
+      "place": "MainHall"
+    },
+    {
+      "id": "f277",
+      "kind": "unused_utility",
+      "player": 10,
+      "side": 1,
+      "round": 21,
+      "tick": 122730,
+      "time": 19265625000,
+      "detail": "died holding HE Grenade",
+      "place": "MainHall"
+    },
+    {
+      "id": "f278",
+      "kind": "flash_no_enemy",
+      "player": 2,
+      "side": 1,
+      "round": 21,
+      "tick": 123345,
+      "time": 28875000000,
+      "detail": "flash blinded enemies for only 0.7s",
+      "place": "Ramp"
+    },
+    {
+      "id": "f279",
+      "kind": "isolated_death",
+      "player": 6,
+      "side": 2,
+      "round": 21,
+      "tick": 124056,
+      "time": 39984375000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player02 with no teammate within 700u (nearest: player09, 976u)",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f280",
+      "kind": "unused_utility",
+      "player": 6,
+      "side": 2,
+      "round": 21,
+      "tick": 124056,
+      "time": 39984375000,
+      "detail": "died holding Flashbang",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f281",
+      "kind": "team_flash",
+      "player": 4,
+      "side": 1,
+      "round": 21,
+      "tick": 124485,
+      "time": 46687500000,
+      "related": [
+        4
+      ],
+      "detail": "flash blinded own team: self",
+      "place": "BombsiteB"
+    },
+    {
+      "id": "f282",
+      "kind": "isolated_death",
+      "player": 4,
+      "side": 1,
+      "round": 21,
+      "tick": 124515,
+      "time": 47156250000,
+      "related": [
+        1
+      ],
+      "detail": "killed by player09 with no teammate within 700u (nearest: player01, 1149u)",
+      "place": "Alley"
+    },
+    {
+      "id": "f283",
+      "kind": "unused_utility",
+      "player": 4,
+      "side": 1,
+      "round": 21,
+      "tick": 124515,
+      "time": 47156250000,
+      "detail": "died holding Flashbang, HE Grenade",
+      "place": "Alley"
+    },
+    {
+      "id": "f284",
+      "kind": "isolated_death",
+      "player": 7,
+      "side": 2,
+      "round": 21,
+      "tick": 124683,
+      "time": 49781250000,
+      "related": [
+        9
+      ],
+      "detail": "killed by player08 with no teammate within 700u (nearest: player09, 1392u)",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f285",
+      "kind": "unused_utility",
+      "player": 7,
+      "side": 2,
+      "round": 21,
+      "tick": 124683,
+      "time": 49781250000,
+      "detail": "died holding Flashbang",
+      "place": "SideEntrance"
+    },
+    {
+      "id": "f286",
+      "kind": "flash_no_enemy",
+      "player": 8,
+      "side": 1,
+      "round": 21,
+      "tick": 125178,
+      "time": 57515625000,
+      "detail": "flash blinded no enemy",
+      "place": "SideEntrance"
+    }
+  ],
+  "stats": [
+    {
+      "player": 1,
+      "kind": "buy_desync",
+      "count": 0,
+      "chances": 19,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 1,
+      "kind": "flash_no_enemy",
+      "count": 0,
+      "chances": 2,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 1,
+      "kind": "isolated_death",
+      "count": 7,
+      "chances": 14,
+      "rounds": [
+        1,
+        4,
+        7,
+        11,
+        15,
+        16,
+        20
+      ],
+      "findings": [
+        "f6",
+        "f36",
+        "f79",
+        "f145",
+        "f199",
+        "f214",
+        "f261"
+      ]
+    },
+    {
+      "player": 1,
+      "kind": "missed_drop",
+      "count": 0,
+      "chances": 5,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 1,
+      "kind": "missed_trade",
+      "count": 2,
+      "chances": 2,
+      "rounds": [
+        1,
+        16
+      ],
+      "findings": [
+        "f5",
+        "f213"
+      ]
+    },
+    {
+      "player": 1,
+      "kind": "no_utility",
+      "count": 4,
+      "chances": 8,
+      "rounds": [
+        10,
+        11,
+        14,
+        17
+      ],
+      "findings": [
+        "f120",
+        "f134",
+        "f183",
+        "f217"
+      ]
+    },
+    {
+      "player": 1,
+      "kind": "opening_death",
+      "count": 3,
+      "chances": 21,
+      "rounds": [
+        2,
+        3,
+        4
+      ],
+      "findings": [
+        "f10",
+        "f20",
+        "f37"
+      ]
+    },
+    {
+      "player": 1,
+      "kind": "team_flash",
+      "count": 0,
+      "chances": 2,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 1,
+      "kind": "unused_utility",
+      "count": 10,
+      "chances": 14,
+      "rounds": [
+        3,
+        6,
+        7,
+        9,
+        11,
+        12,
+        15,
+        17,
+        19,
+        20
+      ],
+      "findings": [
+        "f21",
+        "f73",
+        "f80",
+        "f112",
+        "f146",
+        "f164",
+        "f200",
+        "f227",
+        "f241",
+        "f262"
+      ]
+    },
+    {
+      "player": 2,
+      "kind": "buy_desync",
+      "count": 0,
+      "chances": 19,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 2,
+      "kind": "flash_no_enemy",
+      "count": 8,
+      "chances": 10,
+      "rounds": [
+        6,
+        7,
+        10,
+        13,
+        15,
+        17,
+        18,
+        21
+      ],
+      "findings": [
+        "f63",
+        "f81",
+        "f128",
+        "f176",
+        "f203",
+        "f219",
+        "f230",
+        "f278"
+      ]
+    },
+    {
+      "player": 2,
+      "kind": "isolated_death",
+      "count": 6,
+      "chances": 9,
+      "rounds": [
+        1,
+        2,
+        7,
+        12,
+        15,
+        16
+      ],
+      "findings": [
+        "f1",
+        "f14",
+        "f85",
+        "f160",
+        "f206",
+        "f210"
+      ]
+    },
+    {
+      "player": 2,
+      "kind": "missed_drop",
+      "count": 1,
+      "chances": 13,
+      "rounds": [
+        20
+      ],
+      "findings": [
+        "f253"
+      ]
+    },
+    {
+      "player": 2,
+      "kind": "missed_trade",
+      "count": 6,
+      "chances": 7,
+      "rounds": [
+        3,
+        6,
+        9,
+        18,
+        19
+      ],
+      "findings": [
+        "f19",
+        "f72",
+        "f111",
+        "f236",
+        "f240",
+        "f251"
+      ]
+    },
+    {
+      "player": 2,
+      "kind": "no_utility",
+      "count": 0,
+      "chances": 10,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 2,
+      "kind": "opening_death",
+      "count": 3,
+      "chances": 21,
+      "rounds": [
+        1,
+        12,
+        20
+      ],
+      "findings": [
+        "f2",
+        "f161",
+        "f259"
+      ]
+    },
+    {
+      "player": 2,
+      "kind": "team_flash",
+      "count": 2,
+      "chances": 10,
+      "rounds": [
+        7,
+        18
+      ],
+      "findings": [
+        "f82",
+        "f231"
+      ]
+    },
+    {
+      "player": 2,
+      "kind": "unused_utility",
+      "count": 6,
+      "chances": 10,
+      "rounds": [
+        1,
+        2,
+        9,
+        12,
+        17,
+        20
+      ],
+      "findings": [
+        "f3",
+        "f15",
+        "f113",
+        "f162",
+        "f223",
+        "f260"
+      ]
+    },
+    {
+      "player": 3,
+      "kind": "buy_desync",
+      "count": 1,
+      "chances": 12,
+      "rounds": [
+        10
+      ],
+      "findings": [
+        "f119"
+      ]
+    },
+    {
+      "player": 3,
+      "kind": "flash_no_enemy",
+      "count": 4,
+      "chances": 6,
+      "rounds": [
+        2,
+        3
+      ],
+      "findings": [
+        "f8",
+        "f16",
+        "f18",
+        "f31"
+      ]
+    },
+    {
+      "player": 3,
+      "kind": "isolated_death",
+      "count": 1,
+      "chances": 6,
+      "rounds": [
+        12
+      ],
+      "findings": [
+        "f165"
+      ]
+    },
+    {
+      "player": 3,
+      "kind": "missed_drop",
+      "count": 0,
+      "chances": 1,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 3,
+      "kind": "missed_trade",
+      "count": 3,
+      "chances": 3,
+      "rounds": [
+        2,
+        5,
+        7
+      ],
+      "findings": [
+        "f11",
+        "f57",
+        "f77"
+      ]
+    },
+    {
+      "player": 3,
+      "kind": "no_utility",
+      "count": 4,
+      "chances": 5,
+      "rounds": [
+        8,
+        9,
+        11,
+        12
+      ],
+      "findings": [
+        "f91",
+        "f102",
+        "f135",
+        "f157"
+      ]
+    },
+    {
+      "player": 3,
+      "kind": "opening_death",
+      "count": 1,
+      "chances": 13,
+      "rounds": [
+        6
+      ],
+      "findings": [
+        "f66"
+      ]
+    },
+    {
+      "player": 3,
+      "kind": "team_flash",
+      "count": 3,
+      "chances": 6,
+      "rounds": [
+        2,
+        7
+      ],
+      "findings": [
+        "f9",
+        "f17",
+        "f76"
+      ]
+    },
+    {
+      "player": 3,
+      "kind": "unused_utility",
+      "count": 6,
+      "chances": 11,
+      "rounds": [
+        3,
+        4,
+        7,
+        11,
+        12,
+        13
+      ],
+      "findings": [
+        "f32",
+        "f41",
+        "f90",
+        "f153",
+        "f166",
+        "f173"
+      ]
+    },
+    {
+      "player": 4,
+      "kind": "buy_desync",
+      "count": 1,
+      "chances": 19,
+      "rounds": [
+        5
+      ],
+      "findings": [
+        "f49"
+      ]
+    },
+    {
+      "player": 4,
+      "kind": "flash_no_enemy",
+      "count": 5,
+      "chances": 10,
+      "rounds": [
+        12,
+        14,
+        19,
+        20
+      ],
+      "findings": [
+        "f169",
+        "f171",
+        "f194",
+        "f247",
+        "f263"
+      ]
+    },
+    {
+      "player": 4,
+      "kind": "isolated_death",
+      "count": 10,
+      "chances": 14,
+      "rounds": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        11,
+        20,
+        21
+      ],
+      "findings": [
+        "f4",
+        "f13",
+        "f30",
+        "f47",
+        "f68",
+        "f88",
+        "f99",
+        "f150",
+        "f268",
+        "f282"
+      ]
+    },
+    {
+      "player": 4,
+      "kind": "missed_drop",
+      "count": 1,
+      "chances": 7,
+      "rounds": [
+        20
+      ],
+      "findings": [
+        "f254"
+      ]
+    },
+    {
+      "player": 4,
+      "kind": "missed_trade",
+      "count": 3,
+      "chances": 5,
+      "rounds": [
+        4,
+        14,
+        17
+      ],
+      "findings": [
+        "f43",
+        "f190",
+        "f226"
+      ]
+    },
+    {
+      "player": 4,
+      "kind": "no_utility",
+      "count": 2,
+      "chances": 14,
+      "rounds": [
+        9,
+        15
+      ],
+      "findings": [
+        "f103",
+        "f195"
+      ]
+    },
+    {
+      "player": 4,
+      "kind": "opening_death",
+      "count": 0,
+      "chances": 21,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 4,
+      "kind": "team_flash",
+      "count": 1,
+      "chances": 10,
+      "rounds": [
+        21
+      ],
+      "findings": [
+        "f281"
+      ]
+    },
+    {
+      "player": 4,
+      "kind": "unused_utility",
+      "count": 10,
+      "chances": 14,
+      "rounds": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        11,
+        15,
+        19,
+        20,
+        21
+      ],
+      "findings": [
+        "f48",
+        "f60",
+        "f69",
+        "f89",
+        "f100",
+        "f151",
+        "f205",
+        "f248",
+        "f269",
+        "f283"
+      ]
+    },
+    {
+      "player": 5,
+      "kind": "buy_desync",
+      "count": 0,
+      "chances": 19,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 5,
+      "kind": "flash_no_enemy",
+      "count": 2,
+      "chances": 2,
+      "rounds": [
+        4,
+        18
+      ],
+      "findings": [
+        "f44",
+        "f232"
+      ]
+    },
+    {
+      "player": 5,
+      "kind": "isolated_death",
+      "count": 10,
+      "chances": 16,
+      "rounds": [
+        3,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        18,
+        19,
+        21
+      ],
+      "findings": [
+        "f23",
+        "f83",
+        "f118",
+        "f127",
+        "f144",
+        "f167",
+        "f174",
+        "f235",
+        "f249",
+        "f272"
+      ]
+    },
+    {
+      "player": 5,
+      "kind": "missed_trade",
+      "count": 4,
+      "chances": 5,
+      "rounds": [
+        5,
+        6,
+        10,
+        14
+      ],
+      "findings": [
+        "f59",
+        "f65",
+        "f124",
+        "f191"
+      ]
+    },
+    {
+      "player": 5,
+      "kind": "no_utility",
+      "count": 4,
+      "chances": 5,
+      "rounds": [
+        8,
+        12,
+        14,
+        20
+      ],
+      "findings": [
+        "f92",
+        "f158",
+        "f184",
+        "f256"
+      ]
+    },
+    {
+      "player": 5,
+      "kind": "opening_death",
+      "count": 2,
+      "chances": 21,
+      "rounds": [
+        17,
+        21
+      ],
+      "findings": [
+        "f221",
+        "f273"
+      ]
+    },
+    {
+      "player": 5,
+      "kind": "team_flash",
+      "count": 0,
+      "chances": 2,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 5,
+      "kind": "unused_utility",
+      "count": 3,
+      "chances": 19,
+      "rounds": [
+        13,
+        17,
+        21
+      ],
+      "findings": [
+        "f175",
+        "f222",
+        "f274"
+      ]
+    },
+    {
+      "player": 6,
+      "kind": "buy_desync",
+      "count": 0,
+      "chances": 19,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 6,
+      "kind": "flash_no_enemy",
+      "count": 4,
+      "chances": 7,
+      "rounds": [
+        3,
+        4,
+        11
+      ],
+      "findings": [
+        "f24",
+        "f38",
+        "f42",
+        "f140"
+      ]
+    },
+    {
+      "player": 6,
+      "kind": "isolated_death",
+      "count": 8,
+      "chances": 15,
+      "rounds": [
+        8,
+        9,
+        10,
+        11,
+        13,
+        15,
+        18,
+        21
+      ],
+      "findings": [
+        "f101",
+        "f114",
+        "f129",
+        "f154",
+        "f178",
+        "f201",
+        "f238",
+        "f279"
+      ]
+    },
+    {
+      "player": 6,
+      "kind": "missed_drop",
+      "count": 0,
+      "chances": 1,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 6,
+      "kind": "missed_trade",
+      "count": 4,
+      "chances": 5,
+      "rounds": [
+        4,
+        5,
+        6,
+        11
+      ],
+      "findings": [
+        "f40",
+        "f54",
+        "f67",
+        "f152"
+      ]
+    },
+    {
+      "player": 6,
+      "kind": "no_utility",
+      "count": 2,
+      "chances": 11,
+      "rounds": [
+        2,
+        9
+      ],
+      "findings": [
+        "f7",
+        "f104"
+      ]
+    },
+    {
+      "player": 6,
+      "kind": "opening_death",
+      "count": 1,
+      "chances": 21,
+      "rounds": [
+        16
+      ],
+      "findings": [
+        "f209"
+      ]
+    },
+    {
+      "player": 6,
+      "kind": "team_flash",
+      "count": 2,
+      "chances": 7,
+      "rounds": [
+        11,
+        21
+      ],
+      "findings": [
+        "f141",
+        "f275"
+      ]
+    },
+    {
+      "player": 6,
+      "kind": "unused_utility",
+      "count": 14,
+      "chances": 17,
+      "rounds": [
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21
+      ],
+      "findings": [
+        "f29",
+        "f46",
+        "f58",
+        "f86",
+        "f115",
+        "f130",
+        "f155",
+        "f180",
+        "f192",
+        "f202",
+        "f229",
+        "f239",
+        "f244",
+        "f280"
+      ]
+    },
+    {
+      "player": 7,
+      "kind": "buy_desync",
+      "count": 0,
+      "chances": 19,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 7,
+      "kind": "flash_no_enemy",
+      "count": 5,
+      "chances": 6,
+      "rounds": [
+        3,
+        4,
+        10,
+        16,
+        19
+      ],
+      "findings": [
+        "f25",
+        "f39",
+        "f123",
+        "f207",
+        "f245"
+      ]
+    },
+    {
+      "player": 7,
+      "kind": "isolated_death",
+      "count": 8,
+      "chances": 19,
+      "rounds": [
+        3,
+        8,
+        9,
+        14,
+        16,
+        17,
+        19,
+        21
+      ],
+      "findings": [
+        "f26",
+        "f97",
+        "f108",
+        "f186",
+        "f215",
+        "f228",
+        "f246",
+        "f284"
+      ]
+    },
+    {
+      "player": 7,
+      "kind": "missed_trade",
+      "count": 5,
+      "chances": 5,
+      "rounds": [
+        4,
+        12,
+        16,
+        18,
+        19
+      ],
+      "findings": [
+        "f45",
+        "f170",
+        "f211",
+        "f233",
+        "f243"
+      ]
+    },
+    {
+      "player": 7,
+      "kind": "no_utility",
+      "count": 3,
+      "chances": 8,
+      "rounds": [
+        8,
+        12,
+        21
+      ],
+      "findings": [
+        "f93",
+        "f159",
+        "f271"
+      ]
+    },
+    {
+      "player": 7,
+      "kind": "opening_death",
+      "count": 4,
+      "chances": 21,
+      "rounds": [
+        5,
+        9,
+        10,
+        14
+      ],
+      "findings": [
+        "f55",
+        "f109",
+        "f125",
+        "f187"
+      ]
+    },
+    {
+      "player": 7,
+      "kind": "team_flash",
+      "count": 0,
+      "chances": 6,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 7,
+      "kind": "unused_utility",
+      "count": 10,
+      "chances": 20,
+      "rounds": [
+        2,
+        3,
+        5,
+        7,
+        10,
+        11,
+        13,
+        14,
+        20,
+        21
+      ],
+      "findings": [
+        "f12",
+        "f27",
+        "f56",
+        "f78",
+        "f126",
+        "f149",
+        "f181",
+        "f188",
+        "f264",
+        "f285"
+      ]
+    },
+    {
+      "player": 8,
+      "kind": "buy_desync",
+      "count": 1,
+      "chances": 19,
+      "rounds": [
+        5
+      ],
+      "findings": [
+        "f50"
+      ]
+    },
+    {
+      "player": 8,
+      "kind": "flash_no_enemy",
+      "count": 1,
+      "chances": 1,
+      "rounds": [
+        21
+      ],
+      "findings": [
+        "f286"
+      ]
+    },
+    {
+      "player": 8,
+      "kind": "isolated_death",
+      "count": 3,
+      "chances": 10,
+      "rounds": [
+        11,
+        12,
+        19
+      ],
+      "findings": [
+        "f136",
+        "f163",
+        "f250"
+      ]
+    },
+    {
+      "player": 8,
+      "kind": "missed_drop",
+      "count": 0,
+      "chances": 10,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 8,
+      "kind": "missed_trade",
+      "count": 2,
+      "chances": 3,
+      "rounds": [
+        15,
+        16
+      ],
+      "findings": [
+        "f204",
+        "f212"
+      ]
+    },
+    {
+      "player": 8,
+      "kind": "no_utility",
+      "count": 4,
+      "chances": 11,
+      "rounds": [
+        7,
+        9,
+        10,
+        17
+      ],
+      "findings": [
+        "f75",
+        "f105",
+        "f121",
+        "f218"
+      ]
+    },
+    {
+      "player": 8,
+      "kind": "opening_death",
+      "count": 1,
+      "chances": 21,
+      "rounds": [
+        11
+      ],
+      "findings": [
+        "f137"
+      ]
+    },
+    {
+      "player": 8,
+      "kind": "team_flash",
+      "count": 0,
+      "chances": 1,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 8,
+      "kind": "unused_utility",
+      "count": 0,
+      "chances": 11,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 9,
+      "kind": "buy_desync",
+      "count": 0,
+      "chances": 19,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 9,
+      "kind": "flash_no_enemy",
+      "count": 14,
+      "chances": 20,
+      "rounds": [
+        4,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        19,
+        20
+      ],
+      "findings": [
+        "f34",
+        "f64",
+        "f71",
+        "f84",
+        "f107",
+        "f110",
+        "f131",
+        "f138",
+        "f142",
+        "f156",
+        "f168",
+        "f177",
+        "f242",
+        "f257"
+      ]
+    },
+    {
+      "player": 9,
+      "kind": "isolated_death",
+      "count": 8,
+      "chances": 11,
+      "rounds": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        17,
+        20
+      ],
+      "findings": [
+        "f61",
+        "f74",
+        "f87",
+        "f98",
+        "f116",
+        "f132",
+        "f224",
+        "f267"
+      ]
+    },
+    {
+      "player": 9,
+      "kind": "missed_drop",
+      "count": 1,
+      "chances": 3,
+      "rounds": [
+        5
+      ],
+      "findings": [
+        "f51"
+      ]
+    },
+    {
+      "player": 9,
+      "kind": "missed_trade",
+      "count": 7,
+      "chances": 9,
+      "rounds": [
+        3,
+        6,
+        11,
+        13,
+        14,
+        16,
+        17
+      ],
+      "findings": [
+        "f28",
+        "f70",
+        "f148",
+        "f179",
+        "f193",
+        "f208",
+        "f220"
+      ]
+    },
+    {
+      "player": 9,
+      "kind": "no_utility",
+      "count": 1,
+      "chances": 12,
+      "rounds": [
+        5
+      ],
+      "findings": [
+        "f52"
+      ]
+    },
+    {
+      "player": 9,
+      "kind": "opening_death",
+      "count": 1,
+      "chances": 21,
+      "rounds": [
+        18
+      ],
+      "findings": [
+        "f234"
+      ]
+    },
+    {
+      "player": 9,
+      "kind": "team_flash",
+      "count": 4,
+      "chances": 20,
+      "rounds": [
+        4,
+        11,
+        14
+      ],
+      "findings": [
+        "f35",
+        "f139",
+        "f143",
+        "f189"
+      ]
+    },
+    {
+      "player": 9,
+      "kind": "unused_utility",
+      "count": 4,
+      "chances": 16,
+      "rounds": [
+        9,
+        10,
+        13,
+        17
+      ],
+      "findings": [
+        "f117",
+        "f133",
+        "f182",
+        "f225"
+      ]
+    },
+    {
+      "player": 10,
+      "kind": "buy_desync",
+      "count": 1,
+      "chances": 19,
+      "rounds": [
+        17
+      ],
+      "findings": [
+        "f216"
+      ]
+    },
+    {
+      "player": 10,
+      "kind": "flash_no_enemy",
+      "count": 1,
+      "chances": 3,
+      "rounds": [
+        14
+      ],
+      "findings": [
+        "f185"
+      ]
+    },
+    {
+      "player": 10,
+      "kind": "isolated_death",
+      "count": 8,
+      "chances": 10,
+      "rounds": [
+        3,
+        8,
+        11,
+        12,
+        15,
+        18,
+        20,
+        21
+      ],
+      "findings": [
+        "f22",
+        "f94",
+        "f147",
+        "f172",
+        "f196",
+        "f237",
+        "f265",
+        "f276"
+      ]
+    },
+    {
+      "player": 10,
+      "kind": "missed_drop",
+      "count": 2,
+      "chances": 13,
+      "rounds": [
+        20,
+        21
+      ],
+      "findings": [
+        "f255",
+        "f270"
+      ]
+    },
+    {
+      "player": 10,
+      "kind": "missed_trade",
+      "count": 1,
+      "chances": 3,
+      "rounds": [
+        20
+      ],
+      "findings": [
+        "f258"
+      ]
+    },
+    {
+      "player": 10,
+      "kind": "no_utility",
+      "count": 5,
+      "chances": 12,
+      "rounds": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "findings": [
+        "f33",
+        "f53",
+        "f62",
+        "f106",
+        "f122"
+      ]
+    },
+    {
+      "player": 10,
+      "kind": "opening_death",
+      "count": 2,
+      "chances": 21,
+      "rounds": [
+        8,
+        15
+      ],
+      "findings": [
+        "f95",
+        "f197"
+      ]
+    },
+    {
+      "player": 10,
+      "kind": "team_flash",
+      "count": 0,
+      "chances": 3,
+      "rounds": [],
+      "findings": []
+    },
+    {
+      "player": 10,
+      "kind": "unused_utility",
+      "count": 5,
+      "chances": 12,
+      "rounds": [
+        8,
+        15,
+        19,
+        20,
+        21
+      ],
+      "findings": [
+        "f96",
+        "f198",
+        "f252",
+        "f266",
+        "f277"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "player": 1,
+      "partner": 2,
+      "chances": 5,
+      "traded": 1
+    },
+    {
+      "player": 1,
+      "partner": 4,
+      "chances": 1,
+      "traded": 1
+    },
+    {
+      "player": 1,
+      "partner": 10,
+      "chances": 1,
+      "traded": 1
+    },
+    {
+      "player": 2,
+      "partner": 8,
+      "chances": 1,
+      "traded": 1
+    },
+    {
+      "player": 2,
+      "partner": 10,
+      "chances": 1,
+      "traded": 0
+    },
+    {
+      "player": 3,
+      "partner": 5,
+      "chances": 2,
+      "traded": 0
+    },
+    {
+      "player": 3,
+      "partner": 6,
+      "chances": 2,
+      "traded": 0
+    },
+    {
+      "player": 3,
+      "partner": 9,
+      "chances": 1,
+      "traded": 1
+    },
+    {
+      "player": 4,
+      "partner": 8,
+      "chances": 2,
+      "traded": 0
+    },
+    {
+      "player": 5,
+      "partner": 6,
+      "chances": 2,
+      "traded": 1
+    },
+    {
+      "player": 5,
+      "partner": 7,
+      "chances": 1,
+      "traded": 0
+    },
+    {
+      "player": 5,
+      "partner": 9,
+      "chances": 3,
+      "traded": 1
+    },
+    {
+      "player": 6,
+      "partner": 3,
+      "chances": 1,
+      "traded": 0
+    },
+    {
+      "player": 6,
+      "partner": 5,
+      "chances": 1,
+      "traded": 0
+    },
+    {
+      "player": 6,
+      "partner": 7,
+      "chances": 2,
+      "traded": 0
+    },
+    {
+      "player": 6,
+      "partner": 9,
+      "chances": 2,
+      "traded": 0
+    },
+    {
+      "player": 7,
+      "partner": 3,
+      "chances": 2,
+      "traded": 0
+    },
+    {
+      "player": 7,
+      "partner": 5,
+      "chances": 2,
+      "traded": 1
+    },
+    {
+      "player": 7,
+      "partner": 6,
+      "chances": 1,
+      "traded": 0
+    },
+    {
+      "player": 7,
+      "partner": 9,
+      "chances": 3,
+      "traded": 0
+    },
+    {
+      "player": 8,
+      "partner": 1,
+      "chances": 2,
+      "traded": 0
+    },
+    {
+      "player": 8,
+      "partner": 2,
+      "chances": 1,
+      "traded": 0
+    },
+    {
+      "player": 8,
+      "partner": 4,
+      "chances": 3,
+      "traded": 1
+    },
+    {
+      "player": 8,
+      "partner": 10,
+      "chances": 1,
+      "traded": 1
+    },
+    {
+      "player": 9,
+      "partner": 7,
+      "chances": 2,
+      "traded": 0
+    },
+    {
+      "player": 10,
+      "partner": 2,
+      "chances": 1,
+      "traded": 0
+    },
+    {
+      "player": 10,
+      "partner": 4,
+      "chances": 1,
+      "traded": 0
+    }
+  ],
+  "roles": [
+    {
+      "player": 1,
+      "rounds": 21,
+      "openings": 4,
+      "opening_wins": 0,
+      "kills": 6,
+      "awp_kills": 0,
+      "flashes": 2,
+      "good_flashes": 2
+    },
+    {
+      "player": 2,
+      "rounds": 21,
+      "openings": 7,
+      "opening_wins": 4,
+      "kills": 21,
+      "awp_kills": 0,
+      "flashes": 10,
+      "good_flashes": 2
+    },
+    {
+      "player": 3,
+      "rounds": 13,
+      "openings": 1,
+      "opening_wins": 0,
+      "kills": 6,
+      "awp_kills": 2,
+      "flashes": 6,
+      "good_flashes": 2
+    },
+    {
+      "player": 4,
+      "rounds": 21,
+      "openings": 4,
+      "opening_wins": 4,
+      "kills": 18,
+      "awp_kills": 2,
+      "flashes": 10,
+      "good_flashes": 5
+    },
+    {
+      "player": 5,
+      "rounds": 21,
+      "openings": 5,
+      "opening_wins": 3,
+      "kills": 10,
+      "awp_kills": 2,
+      "flashes": 2,
+      "good_flashes": 0
+    },
+    {
+      "player": 6,
+      "rounds": 21,
+      "openings": 2,
+      "opening_wins": 1,
+      "kills": 14,
+      "awp_kills": 1,
+      "flashes": 7,
+      "good_flashes": 3
+    },
+    {
+      "player": 7,
+      "rounds": 21,
+      "openings": 10,
+      "opening_wins": 5,
+      "kills": 15,
+      "awp_kills": 0,
+      "flashes": 6,
+      "good_flashes": 1
+    },
+    {
+      "player": 8,
+      "rounds": 21,
+      "openings": 2,
+      "opening_wins": 1,
+      "kills": 13,
+      "awp_kills": 7,
+      "flashes": 1,
+      "good_flashes": 0
+    },
+    {
+      "player": 9,
+      "rounds": 21,
+      "openings": 2,
+      "opening_wins": 1,
+      "kills": 15,
+      "awp_kills": 2,
+      "flashes": 20,
+      "good_flashes": 6
+    },
+    {
+      "player": 10,
+      "rounds": 21,
+      "openings": 3,
+      "opening_wins": 1,
+      "kills": 23,
+      "awp_kills": 2,
+      "flashes": 3,
+      "good_flashes": 2
+    }
+  ]
+}
